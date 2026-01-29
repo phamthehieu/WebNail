@@ -1,0 +1,32 @@
+<div class="auth-layout">
+  <header class="auth-header">
+    <h1 class="auth-title">{{ 'auth.title' | translate }}</h1>
+
+    <div class="header-actions">
+      <div class="lang-switch">
+        <button
+          type="button"
+          class="lang-btn"
+          [class.is-active]="lang() === 'vi'"
+          (click)="setLanguage('vi')"
+        >
+          VI
+        </button>
+        <button
+          type="button"
+          class="lang-btn"
+          [class.is-active]="lang() === 'en'"
+          (click)="setLanguage('en')"
+        >
+          EN
+        </button>
+      </div>
+
+      <app-theme-toggle></app-theme-toggle>
+    </div>
+  </header>
+
+  <div class="auth-card">
+    <router-outlet></router-outlet>
+  </div>
+</div>

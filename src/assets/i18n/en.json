@@ -1,0 +1,101 @@
+{
+  "app": {
+    "title": "My First App"
+  },
+  "auth": {
+    "title": "Authentication"
+  },
+  "theme": {
+    "toggleToDark": "Dark mode",
+    "toggleToLight": "Light mode"
+  },
+  "products": {
+    "loading": "Loading products...",
+    "listTitle": "Products",
+    "item": "{{id}} - {{title}}"
+  },
+  "home": {
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "locations": "Locations",
+      "offers": "Offers",
+      "bookNow": "Book Now"
+    },
+    "hero": {
+      "badge": "Professional nail care",
+      "titleLine1": "Beautiful Nails",
+      "titleLine2": "SALON QUALITY, YOUR STYLE",
+      "description": "Pick a service, choose a technician, select a time slot — book in 30 seconds. Clean, long-lasting, beautiful nails tailored to you.",
+      "phonePlaceholder": "Enter your phone number to book...",
+      "cta": "Book a Consultation",
+      "stats": {
+        "title": "100+ Services",
+        "subtitle": "Explore now"
+      }
+    },
+    "services": {
+      "title": "Featured services",
+      "subtitle": "Care – polish – nail art – extensions, tailored to your needs",
+      "items": {
+        "manicure": {
+          "title": "Manicure",
+          "desc": "Professional, refined manicure services."
+        },
+        "care": {
+          "title": "Nail care",
+          "desc": "Professional nail care for healthy, clean nails."
+        },
+        "art": {
+          "title": "Nail art",
+          "desc": "Detailed patterns and custom designs that match your vibe."
+        },
+        "gel": {
+          "title": "Gel polish",
+          "desc": "Long-lasting gel polish with a flawless shine."
+        }
+      }
+    },
+    "locations": {
+      "title": "Visit a nearby salon",
+      "subtitle": "Wherever you are, NailbookingAU is ready to welcome you with salon-standard services.",
+      "openNow": "Open",
+      "byAppointment": "By appointment",
+      "hanoi": {
+        "title": "Hanoi Flagship",
+        "address": "25 Phan Chu Trinh, Hoan Kiem"
+      },
+      "hcm": {
+        "title": "Saigon Studio",
+        "address": "128 Nguyen Chi Thanh, District 5"
+      }
+    },
+    "offers": {
+      "badgeTitle": "Happy Hours!",
+      "badgeSubtitle": "Mon - Fri: 10am - 2pm",
+      "title": "Gifts from",
+      "titleAccent": "the Heart",
+      "subtitle": "Special deals for online bookings and loyal customers.",
+      "cards": {
+        "newCustomer": {
+          "badge": "New customer",
+          "title": "First-time booking discount",
+          "desc": "Welcome to NailbookingAU!"
+        },
+        "goldenHour": {
+          "badge": "Golden hour",
+          "title": "Free gel removal / cuticle care",
+          "desc": "When booking between 10:00–14:00"
+        },
+        "group": {
+          "badge": "Group",
+          "title": "Save more with friends",
+          "desc": "Applies to groups of 3+"
+        }
+      },
+      "cta": "See all offers"
+    }
+  }
+  }
+}
+

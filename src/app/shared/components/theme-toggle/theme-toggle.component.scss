@@ -1,0 +1,80 @@
+.pull-cord-container {
+  position: relative;
+  /* make the cord reach the very top */
+  height: 96px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  /* lift the whole cord up into the navbar top edge */
+  margin-top: -48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s ease;
+}
+
+.pull-cord-line {
+  width: 2px;
+  height: 84px;
+  background: #cbd5e1;
+  position: relative;
+  display: block;
+}
+
+.pull-cord-handle {
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pull-cord-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.pull-cord-container:active {
+  transform: translateY(10px);
+}
+
+:root.dark .pull-cord-line {
+  background: var(--primary);
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.swinging {
+  transform-origin: top center;
+  animation: swing 3s ease-in-out infinite;
+}

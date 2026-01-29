@@ -1,0 +1,100 @@
+{
+  "app": {
+    "title": "Ứng dụng đầu tiên"
+  },
+  "auth": {
+    "title": "Đăng nhập"
+  },
+  "theme": {
+    "toggleToDark": "Chế độ tối",
+    "toggleToLight": "Chế độ sáng"
+  },
+  "products": {
+    "loading": "Đang tải sản phẩm...",
+    "listTitle": "Danh sách sản phẩm",
+    "item": "{{id}} - {{title}}"
+  },
+  "home": {
+    "nav": {
+      "home": "Trang Chủ",
+      "services": "Dịch Vụ",
+      "locations": "Chi Nhánh",
+      "offers": "Ưu Đãi",
+      "bookNow": "Đặt Lịch Ngay"
+    },
+    "hero": {
+      "badge": "Chăm sóc móng chuyên nghiệp",
+      "titleLine1": "Móng Đẹp",
+      "titleLine2": "CHUẨN SALON, ĐÚNG GU",
+      "description": "Chọn dịch vụ, chọn kỹ thuật viên, chọn khung giờ — đặt lịch trong 30 giây. Chúng mình chăm sóc móng sạch, bền và đẹp theo đúng nhu cầu của bạn.",
+      "phonePlaceholder": "Nhập số điện thoại để đặt lịch...",
+      "cta": "Đặt Lịch Tư Vấn",
+      "stats": {
+        "title": "100+ Dịch vụ",
+        "subtitle": "Tham gia khám phá ngay"
+      }
+    },
+    "services": {
+      "title": "Dịch vụ nổi bật",
+      "subtitle": "Đủ combo chăm sóc – sơn – vẽ – đắp bột theo đúng nhu cầu",
+      "items": {
+        "manicure": {
+          "title": "Làm móng tay",
+          "desc": "Làm đẹp móng tay chuyên nghiệp, tinh tế."
+        },
+        "care": {
+          "title": "Chăm sóc móng",
+          "desc": "Chăm sóc móng tay chuyên nghiệp, tinh tế."
+        },
+        "art": {
+          "title": "Vẽ nghệ thuật",
+          "desc": "Hoa văn tinh xảo, sáng tạo độc đáo mang phong cách riêng."
+        },
+        "gel": {
+          "title": "Sơn gel",
+          "desc": "Lớp sơn gel bền đẹp, sáng bóng không tì vết, giữ màu lâu dài."
+        }
+      }
+    },
+    "locations": {
+      "title": "Ghé Thăm Cửa Hàng Gần Nhất",
+      "subtitle": "Dù bạn ở đâu, NailbookingAU luôn sẵn sàng chào đón bạn với dịch vụ tiêu chuẩn salon.",
+      "openNow": "Mở cửa",
+      "byAppointment": "Có nhận đặt hẹn",
+      "hanoi": {
+        "title": "Hà Nội Flagship",
+        "address": "25 Phan Chu Trinh, Hoàn Kiếm"
+      },
+      "hcm": {
+        "title": "Sài Gòn Studio",
+        "address": "128 Nguyễn Chí Thanh, Quận 5"
+      }
+    },
+    "offers": {
+      "badgeTitle": "Happy Hours!",
+      "badgeSubtitle": "Mon - Fri: 10am - 2pm",
+      "title": "Quà Tặng Từ",
+      "titleAccent": "Trái Tim",
+      "subtitle": "Chúng mình luôn dành những ưu đãi đặc biệt nhất cho khách đặt lịch và khách thân thiết.",
+      "cards": {
+        "newCustomer": {
+          "badge": "Khách mới",
+          "title": "Giảm cho lần trải nghiệm đầu tiên",
+          "desc": "Chào mừng bạn đến với NailbookingAU!"
+        },
+        "goldenHour": {
+          "badge": "Giờ vàng",
+          "title": "Tặng tháo gel / cắt da",
+          "desc": "Khi đặt lịch khung giờ 10:00–14:00"
+        },
+        "group": {
+          "badge": "Đi nhóm",
+          "title": "Giảm khi đặt cùng bạn bè",
+          "desc": "Áp dụng cho nhóm từ 3 người trở lên"
+        }
+      },
+      "cta": "Xem toàn bộ ưu đãi"
+    }
+  }
+}
+

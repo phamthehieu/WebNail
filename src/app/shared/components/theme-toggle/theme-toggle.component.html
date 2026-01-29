@@ -1,0 +1,13 @@
+<button
+  type="button"
+  class="pull-cord-container swinging"
+  (click)="toggleTheme($event)"
+  [attr.aria-label]="theme() === 'dark' ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'"
+  [attr.aria-pressed]="theme() === 'dark'"
+>
+  <span class="pull-cord-line" aria-hidden="true"></span>
+  <span class="pull-cord-handle" aria-hidden="true">
+    <mat-icon class="pull-cord-icon" *ngIf="theme() !== 'dark'">lightbulb</mat-icon>
+    <mat-icon class="pull-cord-icon" *ngIf="theme() === 'dark'">dark_mode</mat-icon>
+  </span>
+</button>
