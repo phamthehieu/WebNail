@@ -1,0 +1,67 @@
+<section class="py-24 px-6 bg-cardBg transition-colors duration-500" id="services">
+  <div class="max-w-7xl mx-auto">
+      <div
+          enterClass="animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000"
+          leaveClass="animate-leave fade-out-0"
+          class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-up">
+          <div>
+              <h2 class="font-artistic text-5xl text-primary mb-2">{{ 'home.services.title' | translate }}</h2>
+              <p class="text-textMain/60 text-lg">{{ 'home.services.subtitle' | translate }}</p>
+          </div>
+      </div>
+      <div class="mosaic-grid">
+          <div
+              enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+              leaveClass="animate-leave fade-out-0"
+              class="mosaic-item-large relative group overflow-hidden rounded-[2rem] stagger-item">
+              <img alt="Expressive Art 1"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src="assets/images/lam_mong.jpg" />
+              <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                  <h4 class="text-white text-2xl font-bold">{{ 'home.services.items.manicure.title' | translate }}</h4>
+                  <p class="text-white/90">{{ 'home.services.items.manicure.desc' | translate }}</p>
+              </div>
+          </div>
+          <div
+              enterClass="animate-enter fade-in-10 animate-duration-1000"
+              leaveClass="animate-leave fade-out-0"
+              class="relative group overflow-hidden rounded-[2rem] stagger-item">
+              <img alt="Expressive Art 2"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src="assets/images/cham_soc.jpg" />
+              <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                  <h4 class="text-white text-2xl font-bold">{{ 'home.services.items.care.title' | translate }}</h4>
+                  <p class="text-white/90">{{ 'home.services.items.care.desc' | translate }}</p>
+              </div>
+          </div>
+          <div
+              enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000"
+              leaveClass="animate-leave fade-out-0"
+              class="mosaic-item-tall relative group overflow-hidden rounded-[2rem] stagger-item">
+              <img alt="Expressive Art 3"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src="assets/images/nghe_thuat.jpg" />
+              <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                  <h4 class="text-white text-2xl font-bold">{{ 'home.services.items.art.title' | translate }}</h4>
+                  <p class="text-white/90">{{ 'home.services.items.art.desc' | translate }}</p>
+              </div>
+          </div>
+          <div
+              enterClass="animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000"
+              leaveClass="animate-leave fade-out-0"
+              class="relative group overflow-hidden rounded-[2rem] stagger-item">
+              <img alt="Expressive Art 4"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  src="assets/images/son_gel.jpg" />
+              <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                  <h4 class="text-white text-2xl font-bold">{{ 'home.services.items.gel.title' | translate }}</h4>
+                  <p class="text-white/90">{{ 'home.services.items.gel.desc' | translate }}</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

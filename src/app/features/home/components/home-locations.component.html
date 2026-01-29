@@ -1,0 +1,88 @@
+<section class="py-24 bg-background transition-colors duration-500" id="locations">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal-up">
+      <h3 class="font-artistic text-5xl text-primary mb-4">
+        {{ 'home.locations.title' | translate }}
+      </h3>
+      <p class="text-textMain/60 max-w-2xl mx-auto">
+        {{ 'home.locations.subtitle' | translate }}
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-1 space-y-6">
+        <div
+          class="bg-cardBg p-8 rounded-[2.5rem] shadow-sm border-2 border-primary/10 hover:border-primary/40 transition-all cursor-pointer reveal-left"
+        >
+          <div
+            class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6"
+          >
+            <mat-icon class="text-[24px]">star</mat-icon>
+          </div>
+          <h4 class="text-2xl font-bold text-textMain mb-2">
+            {{ 'home.locations.hanoi.title' | translate }}
+          </h4>
+          <p class="text-textMain/50 text-sm mb-6">
+            {{ 'home.locations.hanoi.address' | translate }}
+          </p>
+          <div class="flex gap-2">
+            <span
+              class="px-3 py-1 bg-secondary/30 text-emerald-700 rounded-full text-xs font-bold uppercase"
+            >
+              {{ 'home.locations.openNow' | translate }}
+            </span>
+            <span
+              class="px-3 py-1 bg-accent/20 text-textMain/60 rounded-full text-xs font-bold uppercase"
+            >
+              {{ 'home.locations.byAppointment' | translate }}
+            </span>
+          </div>
+        </div>
+        <div
+          class="bg-cardBg p-8 rounded-[2.5rem] shadow-sm border-2 border-transparent hover:border-primary/20 transition-all cursor-pointer opacity-70 reveal-left"
+        >
+          <div
+            class="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-emerald-500 mb-6"
+          >
+            <mat-icon class="text-[24px]">palette</mat-icon>
+          </div>
+          <h4 class="text-2xl font-bold text-textMain mb-2">
+            {{ 'home.locations.hcm.title' | translate }}
+          </h4>
+          <p class="text-textMain/50 text-sm mb-6">
+            {{ 'home.locations.hcm.address' | translate }}
+          </p>
+          <div class="flex gap-2">
+            <span
+              class="px-3 py-1 bg-secondary/30 text-emerald-700 rounded-full text-xs font-bold uppercase"
+            >
+              {{ 'home.locations.openNow' | translate }}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="lg:col-span-2 relative rounded-[3rem] overflow-hidden shadow-xl min-h-[500px] border-4 border-cardBg bg-slate-100 reveal-right"
+      >
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="relative">
+            <div class="absolute -inset-8 bg-primary/20 rounded-full animate-ping"></div>
+            <mat-icon class="text-primary drop-shadow-lg text-[64px]">location_on</mat-icon>
+          </div>
+        </div>
+        <div class="absolute bottom-8 right-8 flex flex-col gap-2">
+          <button
+            class="w-12 h-12 bg-cardBg rounded-2xl shadow-lg flex items-center justify-center text-textMain/70 hover:text-primary transition-colors"
+          >
+            <mat-icon class="text-[20px]">add</mat-icon>
+          </button>
+          <button
+            class="w-12 h-12 bg-cardBg rounded-2xl shadow-lg flex items-center justify-center text-textMain/70 hover:text-primary transition-colors"
+          >
+            <mat-icon class="text-[20px]">remove</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

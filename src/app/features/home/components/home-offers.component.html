@@ -1,0 +1,91 @@
+<section class="py-24 bg-cardBg overflow-hidden transition-colors duration-500" id="offers">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <div class="relative reveal-left">
+      <div class="absolute -top-10 -left-10 w-40 h-40 bg-accent rounded-full -z-10 opacity-30"></div>
+      <div class="relative rounded-[4rem] overflow-hidden shadow-2xl rotate-1 group">
+        <img
+          src="assets/images/image_footer.png"
+          alt="Nail Artist"
+          class="w-full h-[650px] object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute top-10 left-10 bg-cardBg/90 backdrop-blur-sm p-6 rounded-3xl shadow-lg">
+          <p class="text-primary font-artistic text-3xl">
+            {{ 'home.offers.badgeTitle' | translate }}
+          </p>
+          <p class="text-textMain/60 font-bold uppercase tracking-widest text-xs mt-1">
+            {{ 'home.offers.badgeSubtitle' | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <h3 class="font-artistic text-5xl text-primary mb-6">
+        {{ 'home.offers.title' | translate }} <br /><span class="text-secondary">
+          {{ 'home.offers.titleAccent' | translate }}
+        </span>
+      </h3>
+      <p class="text-textMain/60 mb-12 text-lg">
+        {{ 'home.offers.subtitle' | translate }}
+      </p>
+      <div class="space-y-6">
+        <div
+          class="group bg-accent/20 p-8 rounded-[2rem] border-2 border-transparent hover:border-accent transition-all"
+        >
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-textMain font-bold text-sm tracking-widest uppercase">
+              {{ 'home.offers.cards.newCustomer.badge' | translate }}
+            </span>
+            <span class="text-3xl font-bold text-primary">-20%</span>
+          </div>
+          <p class="text-textMain font-bold text-xl mb-1">
+            {{ 'home.offers.cards.newCustomer.title' | translate }}
+          </p>
+          <p class="text-textMain/40 text-sm italic">
+            {{ 'home.offers.cards.newCustomer.desc' | translate }}
+          </p>
+        </div>
+        <div
+          class="group bg-vibrant/20 p-8 rounded-[2rem] border-2 border-transparent hover:border-vibrant transition-all"
+        >
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-textMain font-bold text-sm tracking-widest uppercase">
+              {{ 'home.offers.cards.goldenHour.badge' | translate }}
+            </span>
+            <span class="text-3xl font-bold text-primary">Free</span>
+          </div>
+          <p class="text-textMain font-bold text-xl mb-1">
+            {{ 'home.offers.cards.goldenHour.title' | translate }}
+          </p>
+          <p class="text-textMain/40 text-sm italic">
+            {{ 'home.offers.cards.goldenHour.desc' | translate }}
+          </p>
+        </div>
+        <div
+          class="group bg-secondary/20 p-8 rounded-[2rem] border-2 border-transparent hover:border-secondary transition-all"
+        >
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-textMain font-bold text-sm tracking-widest uppercase">
+              {{ 'home.offers.cards.group.badge' | translate }}
+            </span>
+            <span class="text-3xl font-bold text-primary">-15%</span>
+          </div>
+          <p class="text-textMain font-bold text-xl mb-1">
+            {{ 'home.offers.cards.group.title' | translate }}
+          </p>
+          <p class="text-textMain/40 text-sm italic">
+            {{ 'home.offers.cards.group.desc' | translate }}
+          </p>
+        </div>
+      </div>
+      <button
+        class="mt-12 group flex items-center gap-4 text-primary font-bold text-lg hover:text-joy transition-colors"
+      >
+        {{ 'home.offers.cta' | translate }}
+        <mat-icon class="text-[20px] group-hover:translate-x-2 transition-transform">
+          arrow_forward
+        </mat-icon>
+      </button>
+    </div>
+  </div>
+</section>
+

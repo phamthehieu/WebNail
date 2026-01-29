@@ -1,0 +1,38 @@
+<nav
+  id="main-nav"
+  class="fixed top-0 w-full z-50 transition-all duration-300 px-6 py-4 flex items-center justify-between bg-cardBg/80 backdrop-blur-md border-b border-primary/10"
+>
+  <div class="flex items-center gap-2">
+    <div
+      class="w-12 h-12 bg-primary flex items-center justify-center rounded-2xl rotate-3 shadow-lg text-white font-artistic text-2xl"
+    >
+      N
+    </div>
+    <span class="text-2xl font-artistic text-primary"
+      >Nailbooking<span class="text-textMain">AU</span></span
+    >
+  </div>
+  <div class="hidden md:flex items-center gap-10 text-sm font-semibold text-textMain/80">
+    <a class="hover:text-primary transition-colors flex items-center gap-1" href="#"
+      >{{ 'home.nav.home' | translate }}</a
+    >
+    <a class="hover:text-primary transition-colors" href="#services"
+      >{{ 'home.nav.services' | translate }}</a
+    >
+    <a class="hover:text-primary transition-colors" href="#locations"
+      >{{ 'home.nav.locations' | translate }}</a
+    >
+    <a class="hover:text-primary transition-colors" href="#offers"
+      >{{ 'home.nav.offers' | translate }}</a
+    >
+  </div>
+  <div class="flex items-center gap-4 mr-10">
+    <button
+      class="bg-primary hover:bg-joy text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105"
+    >
+      {{ 'home.nav.bookNow' | translate }}
+    </button>
+    <app-theme-toggle></app-theme-toggle>
+  </div>
+</nav>
+
