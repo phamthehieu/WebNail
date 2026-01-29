@@ -15,11 +15,11 @@
 }
 
 :root.dark {
-  --primary: #d4af37;
-  --secondary: #1e1e1e;
-  --accent: #2d2d2d;
+  --primary: #ff9aa2;
+  --secondary: #14bd7f;
+  --accent: #ffdac1;
   --vibrant: #3d3d3d;
-  --joy: #c5a028;
+  --joy: #ffb7b2;
   --background: #121212;
   --text-main: #e5e5e5;
   --card-bg: #1a1a1a;
@@ -286,11 +286,6 @@
   
   .dark .home img {
     filter: brightness(0.9) contrast(1.1);
-  }
-  
-  /* Hero image floating animation */
-  .hero-image-float {
-    animation: heroFloat 6s ease-in-out infinite;
   }
   
   @keyframes heroFloat {
