@@ -20,7 +20,19 @@
     "hasAccount": "Already have an account?",
     "signUp": "Sign up now",
     "loginNow": "Log in now",
-    "heroTitle": "Elevate your personal style with every detail."
+    "heroTitle": "Elevate your personal style with every detail.",
+    "backToLogin": "Back to Login",
+    "resetPassword": "Reset password",
+    "forgotPasswordSubtitle": "Enter your email to reset your password",
+    "forgotPasswordDescription": "Enter your email or phone number to receive recovery code",
+    "sendCode": "Send code",
+    "otpTitle": "OTP Verification",
+    "otpDesc": "We have sent a verification code to your phone number. Please enter the 6-digit code below.",
+    "resendAfter": "Resend code in",
+    "confirm": "Verify",
+    "resendBtn": "Resend Code",
+    "verifyIdentity": "Verify your identity",
+    "verifyIdentityDesc": "Ensure your account is always secure and safe."
   },
   "theme": {
     "toggleToDark": "Dark mode",

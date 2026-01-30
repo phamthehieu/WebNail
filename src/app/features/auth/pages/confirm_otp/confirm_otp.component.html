@@ -1,0 +1,117 @@
+<div class="fixed top-6 right-6 z-50 flex items-center gap-4">
+  <app-language-toggle></app-language-toggle>
+  <app-theme-toggle></app-theme-toggle>
+</div>
+
+<main class="flex h-screen w-full">
+  <div class="hidden lg:block lg:w-1/2 relative h-full flex-shrink-0 flex-grow-0">
+    <img
+      alt="Professional Nail Art"
+      class="w-full h-full object-cover"
+      src="assets/images/nail.png"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+    <div class="absolute top-12 left-12">
+      <div class="flex items-center gap-2">
+        <div
+          class="w-12 h-12 bg-primary flex items-center justify-center rounded-xl rotate-3 shadow-lg text-white font-artistic text-2xl"
+        >
+          N
+        </div>
+        <span class="text-2xl font-artistic text-white drop-shadow-md"
+          >Nailbooking<span class="text-secondary">AU</span></span
+        >
+      </div>
+    </div>
+    <div class="absolute bottom-12 left-12 max-w-md">
+      <h2 class="text-4xl font-bold text-white drop-shadow-lg mb-4">
+        {{ 'auth.verifyIdentity' | translate }}
+      </h2>
+      <p class="text-white/80 text-lg">
+        Đảm bảo tài khoản của bạn luôn được bảo mật và an toàn tuyệt đối.
+      </p>
+    </div>
+  </div>
+
+  <div class="w-full lg:w-1/2 flex items-center justify-center px-6 md:px-12 relative flex-shrink-0 flex-grow overflow-y-auto py-12">
+    <div class="absolute top-[-10%] right-[-10%] w-64 h-64 bg-primary/10 rounded-full blur-3xl lg:hidden pointer-events-none z-0"></div>
+    <div class="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-secondary/10 rounded-full blur-3xl lg:hidden pointer-events-none z-0"></div>
+
+    <div
+      class="w-full max-w-md glass-card bg-cardBg p-8 md:p-10 rounded-[2.5rem] shadow-2xl transition-colors duration-500 relative z-10"
+    >
+      <div class="text-center mb-8">
+        <div class="flex flex-col items-center gap-2 mb-4 lg:hidden">
+          <div
+            class="w-12 h-12 bg-primary flex items-center justify-center rounded-2xl rotate-6 shadow-xl text-white font-artistic text-2xl"
+          >
+            N
+          </div>
+          <h1 class="text-2xl font-artistic text-primary">
+            Nailbooking<span class="text-secondary">AU</span>
+          </h1>
+        </div>
+        <h2 class="text-3xl font-bold text-textMain">
+          {{ 'auth.otpTitle' | translate }}
+        </h2>
+        <p class="text-textMain/60 mt-4 text-sm leading-relaxed">
+          {{ 'auth.otpDesc' | translate }}
+        </p>
+      </div>
+
+      <form class="space-y-8" (ngSubmit)="onSubmit()" #otpForm="ngForm">
+        <div
+          class="otp-container flex justify-between gap-2 md:gap-3"
+          [class.error-shake]="hasError"
+          id="otp-container"
+        >
+          <input
+            *ngFor="let digit of otpDigits; let i = index"
+            #otpInput
+            [id]="'otp-' + i"
+            [(ngModel)]="otpDigits[i]"
+            [name]="'otp-' + i"
+            type="text"
+            inputmode="numeric"
+            maxlength="1"
+            autocomplete="one-time-code"
+            class="otp-input"
+            [class.pop]="popIndex === i"
+            (input)="onInput($event, i)"
+            (keydown)="onKeyDown($event, i)"
+            (paste)="onPaste($event)"
+          />
+        </div>
+
+        <div class="text-center space-y-6">
+          <div class="text-sm font-medium text-textMain/50">
+            <span>{{ 'auth.resendAfter' | translate }}</span>
+            <span class="text-coral dark:text-gold font-bold">({{ formatTime(countdown) }})</span>
+          </div>
+          <button type="submit"
+          class="w-full bg-primary hover:bg-coral text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:translate-y-0 text-lg"
+          (click)="onConfirm($event)">
+          {{ 'auth.confirm' | translate }}
+      </button>
+        </div>
+      </form>
+
+      <div class="text-center pt-2">
+        <button
+          class="text-sm font-bold text-textMain/30 hover:text-coral dark:hover:text-gold transition-colors cursor-pointer"
+          [disabled]="countdown > 0"
+          (click)="onResend()"
+        >
+          {{ 'auth.resendBtn' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="fixed bottom-6 left-6 hidden lg:block">
+  <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-textMain/20">
+    MADE WITH LOVE BY <span class="text-primary">nailbookingAU</span> © 2025
+  </p>
+</footer>

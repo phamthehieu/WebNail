@@ -10,6 +10,7 @@
   --vibrant: #c7ceea;
   --joy: #ffb7b2;
   --coral: #ff7f50;
+  --gold: #d4af37;
   --background: #fff9f9;
   --text-main: #334155;
   --card-bg: #ffffff;
@@ -22,6 +23,7 @@
   --vibrant: #3d3d3d;
   --joy: #ffb7b2;
   --coral: #ff7f50;
+  --gold: #d4af37;
   --background: #121212;
   --text-main: #e5e5e5;
   --card-bg: #1a1a1a;
@@ -58,6 +60,7 @@
   --color-vibrant: var(--vibrant);
   --color-joy: var(--joy);
   --color-coral: var(--coral);
+  --color-gold: var(--gold);
   --color-background: var(--background);
   --color-textMain: var(--text-main);
   --color-cardBg: var(--card-bg);

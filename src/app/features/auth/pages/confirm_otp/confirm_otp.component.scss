@@ -1,0 +1,120 @@
+.otp-input {
+  width: 3.5rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  border: 2px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  background: var(--background);
+  color: var(--text-main);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 15px color-mix(in srgb, var(--primary) 40%, transparent);
+    outline: none;
+    transform: translateY(-2px);
+  }
+
+  &.pop {
+    animation: inputPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+:host-context(.dark) .otp-input {
+  &:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 15px color-mix(in srgb, var(--primary) 40%, transparent);
+  }
+}
+
+@keyframes inputPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.otp-container {
+  &.error-shake {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+
+    .otp-input {
+      border-color: var(--primary);
+      box-shadow: 0 0 10px color-mix(in srgb, var(--primary) 30%, transparent);
+    }
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.btn-confirm {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px color-mix(in srgb, var(--primary) 30%, transparent);
+    filter: brightness(1.1);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+:host-context(.dark) .btn-confirm {
+  &:hover:not(:disabled) {
+    box-shadow: 0 10px 20px color-mix(in srgb, var(--primary) 30%, transparent);
+  }
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
