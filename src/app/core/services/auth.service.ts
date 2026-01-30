@@ -19,7 +19,7 @@ export class AuthService {
             const fakeToken = 'token_123';
             localStorage.setItem('token', fakeToken);
             this._token.set(fakeToken);
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/home']);
         }
     }
 

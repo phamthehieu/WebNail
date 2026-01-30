@@ -29,4 +29,6 @@ export class LoginComponent {
   submit() {
     this.authService.login(this.email, this.password);
   }
+
+  
 }
