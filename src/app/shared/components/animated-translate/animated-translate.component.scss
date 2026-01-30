@@ -1,0 +1,49 @@
+/* Hiệu ứng chữ nhảy khi đổi ngôn ngữ (từ Uiverse.io spin_4991) */
+.animated-translate {
+  --words-bg: var(--card-bg, var(--background, #fff));
+  display: inline-block;
+}
+
+.words {
+  overflow: hidden;
+  position: relative;
+  height: 1.5em;
+  min-height: 1em;
+  line-height: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    var(--words-bg) 10%,
+    transparent 30%,
+    transparent 70%,
+    var(--words-bg) 90%
+  );
+  z-index: 10;
+  pointer-events: none;
+}
+
+.words-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.words-inner .word {
+  display: block;
+  height: 1.5em;
+  line-height: 1.5em;
+  flex-shrink: 0;
+  padding-left: 2px;
+  color: inherit;
+}
+
+.words-inner.animating {
+  transform: translateY(-50%);
+}

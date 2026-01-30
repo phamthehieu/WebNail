@@ -19,11 +19,18 @@ export class App {
     this.translate.setDefaultLang('vi');
     const saved = localStorage.getItem('lang');
     const browserLang = this.translate.getBrowserLang();
-    const lang = (saved as string | null) ?? browserLang ?? 'vi';
+    const raw = (saved as string | null) ?? browserLang ?? 'vi';
+    const lang = this.normalizeLang(raw);
     this.useLanguage(lang);
   }
 
-  useLanguage(lang: string) {
+  private normalizeLang(raw: string): 'vi' | 'en' {
+    const lower = raw?.toLowerCase() ?? '';
+    if (lower.startsWith('en')) return 'en';
+    return 'vi';
+  }
+
+  useLanguage(lang: 'vi' | 'en') {
     this.translate.use(lang);
     localStorage.setItem('lang', lang);
   }

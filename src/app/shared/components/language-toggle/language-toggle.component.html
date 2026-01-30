@@ -1,0 +1,26 @@
+<div
+  class="lang-switch"
+  role="group"
+  aria-label="Chọn ngôn ngữ / Choose language"
+>
+  <button
+    type="button"
+    class="lang-option"
+    [class.active]="isVi()"
+    (click)="setLang('vi')"
+    aria-pressed="isVi()"
+    aria-label="Tiếng Việt"
+  >
+    VI
+  </button>
+  <button
+    type="button"
+    class="lang-option"
+    [class.active]="isEn()"
+    (click)="setLang('en')"
+    aria-pressed="isEn()"
+    aria-label="English"
+  >
+    EN
+  </button>
+</div>

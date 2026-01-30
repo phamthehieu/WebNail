@@ -1,9 +1,8 @@
 <section class="py-24 px-6 bg-cardBg transition-colors duration-500" id="services">
   <div class="max-w-7xl mx-auto">
       <div
-          enterClass="animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000"
-          leaveClass="animate-leave fade-out-0"
-          class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-up">
+          class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
+          appScrollReveal="up">
           <div>
               <h2 class="font-artistic text-5xl text-primary mb-2">{{ 'home.services.title' | translate }}</h2>
               <p class="text-textMain/60 text-lg">{{ 'home.services.subtitle' | translate }}</p>
@@ -11,9 +10,9 @@
       </div>
       <div class="mosaic-grid">
           <div
-              enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
-              leaveClass="animate-leave fade-out-0"
-              class="mosaic-item-large relative group overflow-hidden rounded-[2rem] stagger-item">
+              class="mosaic-item-large relative group overflow-hidden rounded-[2rem]"
+              appScrollReveal="left"
+              [scrollRevealStagger]="0">
               <img alt="Expressive Art 1"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   src="assets/images/lam_mong.jpg" />
@@ -24,9 +23,9 @@
               </div>
           </div>
           <div
-              enterClass="animate-enter fade-in-10 animate-duration-1000"
-              leaveClass="animate-leave fade-out-0"
-              class="relative group overflow-hidden rounded-[2rem] stagger-item">
+              class="relative group overflow-hidden rounded-[2rem]"
+              appScrollReveal="up"
+              [scrollRevealStagger]="80">
               <img alt="Expressive Art 2"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   src="assets/images/cham_soc.jpg" />
@@ -37,9 +36,9 @@
               </div>
           </div>
           <div
-              enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000"
-              leaveClass="animate-leave fade-out-0"
-              class="mosaic-item-tall relative group overflow-hidden rounded-[2rem] stagger-item">
+              class="mosaic-item-tall relative group overflow-hidden rounded-[2rem]"
+              appScrollReveal="right"
+              [scrollRevealStagger]="160">
               <img alt="Expressive Art 3"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   src="assets/images/nghe_thuat.jpg" />
@@ -50,9 +49,9 @@
               </div>
           </div>
           <div
-              enterClass="animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000"
-              leaveClass="animate-leave fade-out-0"
-              class="relative group overflow-hidden rounded-[2rem] stagger-item">
+              class="relative group overflow-hidden rounded-[2rem]"
+              appScrollReveal="up"
+              [scrollRevealStagger]="240">
               <img alt="Expressive Art 4"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   src="assets/images/son_gel.jpg" />

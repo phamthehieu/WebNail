@@ -1,6 +1,6 @@
 <section class="py-24 bg-background transition-colors duration-500" id="locations">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16 reveal-up">
+    <div class="text-center mb-16" appScrollReveal="up">
       <h3 class="font-artistic text-5xl text-primary mb-4">
         {{ 'home.locations.title' | translate }}
       </h3>
@@ -11,7 +11,8 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <div class="lg:col-span-1 space-y-6">
         <div
-          class="bg-cardBg p-8 rounded-[2.5rem] shadow-sm border-2 border-primary/10 hover:border-primary/40 transition-all cursor-pointer reveal-left"
+          class="bg-cardBg p-8 rounded-[2.5rem] shadow-sm border-2 border-primary/10 hover:border-primary/40 transition-all cursor-pointer"
+          appScrollReveal="left"
         >
           <div
             class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6"
@@ -38,7 +39,9 @@
           </div>
         </div>
         <div
-          class="bg-cardBg p-8 rounded-[2.5rem] shadow-sm border-2 border-transparent hover:border-primary/20 transition-all cursor-pointer opacity-70 reveal-left"
+          class="bg-cardBg p-8 rounded-[2.5rem] shadow-sm border-2 border-transparent hover:border-primary/20 transition-all cursor-pointer opacity-70"
+          appScrollReveal="left"
+          [scrollRevealStagger]="120"
         >
           <div
             class="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-emerald-500 mb-6"
@@ -61,7 +64,8 @@
         </div>
       </div>
       <div
-        class="lg:col-span-2 relative rounded-[3rem] overflow-hidden shadow-xl min-h-[500px] border-4 border-cardBg bg-slate-100 reveal-right"
+        class="lg:col-span-2 relative rounded-[3rem] overflow-hidden shadow-xl min-h-[500px] border-4 border-cardBg bg-slate-100"
+        appScrollReveal="right"
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <div class="relative">

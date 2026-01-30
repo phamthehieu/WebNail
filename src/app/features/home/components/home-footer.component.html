@@ -2,7 +2,7 @@
   <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
   <div class="max-w-7xl mx-auto relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
-      <div class="col-span-1 md:col-span-1">
+      <div class="col-span-1 md:col-span-1" appScrollReveal="up">
         <div class="flex items-center gap-2 mb-8">
           <div
             class="w-10 h-10 bg-primary flex items-center justify-center rounded-xl text-white font-artistic text-xl"
@@ -38,7 +38,7 @@
           </a>
         </div>
       </div>
-      <div>
+      <div appScrollReveal="up" [scrollRevealStagger]="80">
         <h5 class="text-white font-bold text-lg mb-8">Dịch Vụ Nghệ Thuật</h5>
         <ul class="space-y-4 text-sm font-medium">
           <li><a class="hover:text-primary transition-colors" href="#">Thiết kế Signature</a></li>
@@ -47,7 +47,7 @@
           <li><a class="hover:text-primary transition-colors" href="#">Chăm sóc chuyên sâu</a></li>
         </ul>
       </div>
-      <div>
+      <div appScrollReveal="up" [scrollRevealStagger]="160">
         <h5 class="text-white font-bold text-lg mb-8">Cộng Đồng</h5>
         <ul class="space-y-4 text-sm font-medium">
           <li><a class="hover:text-primary transition-colors" href="#">Hành trình Nghệ sĩ</a></li>
@@ -56,7 +56,7 @@
           <li><a class="hover:text-primary transition-colors" href="#">Đăng ký Workshop</a></li>
         </ul>
       </div>
-      <div>
+      <div appScrollReveal="up" [scrollRevealStagger]="240">
         <h5 class="text-white font-bold text-lg mb-8">Hỗ Trợ</h5>
         <ul class="space-y-4 text-sm font-medium">
           <li><a class="hover:text-primary transition-colors" href="#">Câu hỏi thường gặp</a></li>
@@ -66,7 +66,7 @@
         </ul>
       </div>
     </div>
-    <div class="pt-12 border-t border-white/5 text-center">
+    <div class="pt-12 border-t border-white/5 text-center" appScrollReveal="fade">
       <p class="text-xs uppercase tracking-[0.3em] font-bold text-slate-500">
         MADE WITH LOVE BY <span class="text-primary">nailbookingAU</span> © 2025
       </p>
