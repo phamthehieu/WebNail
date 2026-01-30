@@ -1,0 +1,77 @@
+<app-auth-page-layout>
+  <div class="text-center">
+    <h2 class="text-2xl font-bold text-textMain mb-2">
+      {{ 'auth.createAccount' | translate }}
+    </h2>
+    <p class="text-sm text-textMain/50">
+      {{ 'auth.registerSubtitle' | translate }}
+    </p>
+  </div>
+
+  <form class="space-y-6 w-full" (ngSubmit)="submit()">
+    <div class="space-y-4 w-full">
+      <app-input-field
+        placeholderKey="auth.fullnamePlaceholder"
+        type="text"
+        name="fullname"
+        autocomplete="name"
+        leftIcon="person"
+        [(ngModel)]="fullname"
+      ></app-input-field>
+
+      <app-input-field
+        placeholderKey="auth.phonePlaceholder"
+        type="tel"
+        name="phone"
+        autocomplete="tel"
+        leftIcon="phone"
+        [(ngModel)]="phone"
+      ></app-input-field>
+
+      <app-input-field
+        placeholderKey="auth.emailPlaceholder"
+        type="email"
+        name="email"
+        autocomplete="email"
+        leftIcon="email"
+        [(ngModel)]="email"
+      ></app-input-field>
+
+      <app-input-field
+        placeholderKey="auth.passwordPlaceholder"
+        type="password"
+        name="password"
+        autocomplete="new-password"
+        leftIcon="lock"
+        [showPasswordToggle]="true"
+        [(ngModel)]="password"
+      ></app-input-field>
+
+      <app-input-field
+        placeholderKey="auth.confirmPasswordPlaceholder"
+        type="password"
+        name="confirmPassword"
+        autocomplete="new-password"
+        leftIcon="refresh"
+        [showPasswordToggle]="true"
+        [(ngModel)]="confirmPassword"
+      ></app-input-field>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-primary hover:bg-coral text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:translate-y-0 text-lg"
+    >
+      {{ 'auth.register' | translate }}
+    </button>
+  </form>
+
+  <div class="text-center pt-6">
+    <p class="text-sm text-textMain/50">
+      <span>{{ 'auth.hasAccount' | translate }}</span>
+      <a class="text-primary font-bold hover:underline ml-1" routerLink="/auth/login">
+        {{ 'auth.loginNow' | translate }}
+      </a>
+    </p>
+  </div>
+</app-auth-page-layout>

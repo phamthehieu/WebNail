@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './features/home/pages/home.component';
 
@@ -19,14 +18,8 @@ export const routes: Routes = [
 
   {
     path: 'auth',
-    component: AuthLayoutComponent,
-    children: [
-      {
-        path: 'login',
-        loadChildren: () =>
-          import('./features/auth/auth.module').then((m) => m.AuthModule),
-      },
-    ],
+    loadChildren: () =>
+      import('./features/auth/auth.module').then((m) => m.AuthModule),
   },
 
   {

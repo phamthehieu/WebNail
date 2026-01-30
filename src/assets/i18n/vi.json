@@ -5,13 +5,21 @@
   "auth": {
     "title": "Đăng nhập",
     "login": "Đăng Nhập",
+    "register": "ĐĂNG KÝ",
     "welcomeBack": "Chào mừng trở lại",
+    "createAccount": "Tạo tài khoản mới",
+    "registerSubtitle": "Hoàn thành thông tin bên dưới để đăng ký",
+    "fullnamePlaceholder": "Họ và tên",
+    "phonePlaceholder": "Số điện thoại",
     "emailPlaceholder": "Email hoặc Số điện thoại",
     "passwordPlaceholder": "Mật khẩu",
+    "confirmPasswordPlaceholder": "Xác nhận mật khẩu",
     "forgotPassword": "Quên mật khẩu?",
     "continueWith": "Hoặc tiếp tục với",
     "noAccount": "Chưa có tài khoản?",
+    "hasAccount": "Đã có tài khoản?",
     "signUp": "Đăng ký ngay",
+    "loginNow": "Đăng nhập ngay",
     "heroTitle": "Elevate your personal style with every detail."
   },
   "theme": {

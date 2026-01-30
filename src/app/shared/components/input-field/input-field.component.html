@@ -1,0 +1,40 @@
+<div class="relative my-4 w-full min-w-0">
+  <mat-icon 
+    *ngIf="leftIcon" 
+    class="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 z-10"
+  >
+    {{ leftIcon }}
+  </mat-icon>
+
+  <input
+    [class]="'w-full min-w-0 bg-background border-2 border-primary/10 rounded-2xl py-4 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none shadow-sm text-textMain transition-all placeholder:text-textMain/30 ' + 
+             (leftIcon ? 'pl-12' : 'pl-4') + ' ' +
+             ((rightIcon || showPasswordToggle) ? 'pr-12' : 'pr-4') + ' ' + 
+             (customClasses || '')"
+    [placeholder]="placeholderKey ? (placeholderKey | translate) : placeholder"
+    [type]="getInputType()"
+    [name]="name"
+    [autocomplete]="autocomplete"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+  />
+  
+  <button
+    *ngIf="showPasswordToggle"
+    type="button"
+    class="absolute right-4 top-1/2 -translate-y-1/2 text-textMain/30 hover:text-primary transition-colors z-10"
+    (click)="togglePasswordVisibility()"
+    tabindex="-1"
+  >
+    <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+  </button>
+  
+  <mat-icon 
+    *ngIf="rightIcon && !showPasswordToggle" 
+    class="absolute right-4 top-1/2 -translate-y-1/2 text-textMain/30 z-10"
+  >
+    {{ rightIcon }}
+  </mat-icon>
+</div>

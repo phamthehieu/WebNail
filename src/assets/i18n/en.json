@@ -5,13 +5,21 @@
   "auth": {
     "title": "Authentication",
     "login": "Login",
+    "register": "REGISTER",
     "welcomeBack": "Welcome back",
+    "createAccount": "Create new account",
+    "registerSubtitle": "Complete the information below to register",
+    "fullnamePlaceholder": "Full name",
+    "phonePlaceholder": "Phone number",
     "emailPlaceholder": "Email or Phone Number",
     "passwordPlaceholder": "Password",
+    "confirmPasswordPlaceholder": "Confirm password",
     "forgotPassword": "Forgot password?",
     "continueWith": "Or continue with",
     "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
     "signUp": "Sign up now",
+    "loginNow": "Log in now",
     "heroTitle": "Elevate your personal style with every detail."
   },
   "theme": {

@@ -1,119 +1,65 @@
-<div class="fixed top-6 right-6 z-50 flex items-center gap-4">
-  <app-language-toggle></app-language-toggle>
-  <app-theme-toggle></app-theme-toggle>
-</div>
-
-<main class="flex h-screen w-full overflow-hidden">
-  <div class="hidden lg:block w-1/2 relative h-full">
-    <img
-      alt="Nail Art Atmosphere"
-      class="w-full h-full object-cover"
-      src="assets/images/nail.png"
-    />
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent to-background/50 dark:to-background/80"></div>
-    <div class="absolute bottom-12 left-12 max-w-md">
-      <div class="flex items-center gap-2 mb-4">
-        <div
-          class="w-10 h-10 bg-primary flex items-center justify-center rounded-xl rotate-3 shadow-lg text-white font-artistic text-xl"
-        >
-          N
-        </div>
-        <span class="text-xl font-artistic text-white drop-shadow-md"
-          >Nailbooking<span class="text-secondary">AU</span></span
-        >
+<app-auth-page-layout>
+  <!-- Login Form Header -->
+  <div class="text-center">
+    <div class="flex flex-col items-center gap-3 mb-6">
+      <div
+        class="w-16 h-16 bg-primary flex items-center justify-center rounded-2xl rotate-6 shadow-xl text-white font-artistic text-3xl"
+      >
+        N
       </div>
-      <h2 class="text-4xl font-bold text-white drop-shadow-lg mb-4">
-        {{ 'auth.heroTitle' | translate }}
-      </h2>
+      <h1 class="text-3xl font-artistic text-primary">
+        Nailbooking<span class="text-secondary">AU</span>
+      </h1>
     </div>
+    <h2 class="text-2xl font-bold text-textMain">
+      {{ 'auth.welcomeBack' | translate }}
+    </h2>
   </div>
 
-  <div class="w-full lg:w-1/2 flex items-center justify-center px-6 md:px-12 relative overflow-hidden">
-    <div class="absolute top-[-10%] right-[-10%] w-64 h-64 bg-primary/10 rounded-full blur-3xl lg:hidden"></div>
-    <div class="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-secondary/10 rounded-full blur-3xl lg:hidden"></div>
+  <!-- Login Form -->
+  <form class="space-y-6" (ngSubmit)="submit()">
+    <div class="space-y-4">
+      <app-input-field
+        placeholderKey="auth.emailPlaceholder"
+        type="text"
+        name="email"
+        autocomplete="email"
+        leftIcon="person"
+        [(ngModel)]="email"
+      ></app-input-field>
 
-    <div
-      class="w-full max-w-md space-y-8 glass-card bg-cardBg p-8 md:p-12 rounded-[2.5rem] shadow-2xl transition-colors duration-500"
+      <app-input-field
+        placeholderKey="auth.passwordPlaceholder"
+        type="password"
+        name="password"
+        autocomplete="current-password"
+        leftIcon="lock"
+        [showPasswordToggle]="true"
+        [(ngModel)]="password"
+      ></app-input-field>
+    </div>
+
+    <div class="flex items-center justify-end">
+      <a class="text-sm font-semibold text-primary hover:text-coral transition-colors" href="#">
+        {{ 'auth.forgotPassword' | translate }}
+      </a>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-primary hover:bg-coral text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:translate-y-0 text-lg"
     >
-      <div class="text-center">
-        <div class="flex flex-col items-center gap-3 mb-6">
-          <div
-            class="w-16 h-16 bg-primary flex items-center justify-center rounded-2xl rotate-6 shadow-xl text-white font-artistic text-3xl"
-          >
-            N
-          </div>
-          <h1 class="text-3xl font-artistic text-primary">
-            Nailbooking<span class="text-secondary">AU</span>
-          </h1>
-        </div>
-        <h2 class="text-2xl font-bold text-textMain">
-          {{ 'auth.welcomeBack' | translate }}
-        </h2>
-      </div>
+      {{ 'auth.login' | translate }}
+    </button>
+  </form>
 
-      <form class="space-y-6" (ngSubmit)="submit()">
-        <div class="space-y-4">
-          <div class="relative">
-            <mat-icon class="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60">person</mat-icon>
-            <input
-              class="w-full bg-background border-2 border-primary/10 rounded-2xl pl-12 pr-4 py-4 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none shadow-sm text-textMain transition-all placeholder:text-textMain/30"
-              [placeholder]="'auth.emailPlaceholder' | translate"
-              type="text"
-              name="email"
-              autocomplete="email"
-              [(ngModel)]="email"
-            />
-          </div>
-
-          <div class="relative">
-            <mat-icon class="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60">lock</mat-icon>
-            <input
-              class="w-full bg-background border-2 border-primary/10 rounded-2xl pl-12 pr-12 py-4 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none shadow-sm text-textMain transition-all placeholder:text-textMain/30"
-              [placeholder]="'auth.passwordPlaceholder' | translate"
-              type="password"
-              name="password"
-              autocomplete="current-password"
-              [(ngModel)]="password"
-              [type]="showPassword ? 'text' : 'password'"
-            />
-            <button
-              type="button"
-              class="absolute right-4 top-1/2 -translate-y-1/2 text-textMain/30 hover:text-primary transition-colors"
-              (click)="togglePasswordVisibility()"
-            >
-              <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
-            </button>
-          </div>
-        </div>
-
-        <div class="flex items-center justify-end">
-          <a class="text-sm font-semibold text-primary hover:text-coral transition-colors" href="#">
-            {{ 'auth.forgotPassword' | translate }}
-          </a>
-        </div>
-
-        <button
-          type="submit"
-          class="w-full bg-primary hover:bg-coral text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:translate-y-0 text-lg"
-        >
-          {{ 'auth.login' | translate }}
-        </button>
-      </form>
-
-      <div class="text-center pt-6">
-        <p class="text-sm text-textMain/50">
-          <span>{{ 'auth.noAccount' | translate }}</span>
-          <a class="text-primary font-bold hover:underline ml-1" href="#">
-            {{ 'auth.signUp' | translate }}
-          </a>
-        </p>
-      </div>
-    </div>
+  <!-- Login Footer -->
+  <div class="text-center pt-6">
+    <p class="text-sm text-textMain/50">
+      <span>{{ 'auth.noAccount' | translate }}</span>
+      <a class="text-primary font-bold hover:underline ml-1" routerLink="/auth/register">
+        {{ 'auth.signUp' | translate }}
+      </a>
+    </p>
   </div>
-</main>
-
-<footer class="fixed bottom-6 left-6 hidden lg:block">
-  <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-textMain/20">
-    MADE WITH LOVE BY <span class="text-primary">nailbookingAU</span> © 2025
-  </p>
-</footer>
+</app-auth-page-layout>
