@@ -1,5 +1,5 @@
-<div class="auth-layout">
-  <header class="auth-header">
+<div class="auth-layout" [class.full-width]="isLoginPage()">
+  <header class="auth-header" *ngIf="!isLoginPage()">
     <h1 class="auth-title">{{ 'auth.title' | translate }}</h1>
 
     <div class="header-actions">
@@ -26,7 +26,11 @@
     </div>
   </header>
 
-  <div class="auth-card">
+  <div class="auth-card" *ngIf="!isLoginPage()">
+    <router-outlet></router-outlet>
+  </div>
+  
+  <div *ngIf="isLoginPage()" class="login-wrapper">
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -3,7 +3,16 @@
     "title": "Ứng dụng đầu tiên"
   },
   "auth": {
-    "title": "Đăng nhập"
+    "title": "Đăng nhập",
+    "login": "Đăng Nhập",
+    "welcomeBack": "Chào mừng trở lại",
+    "emailPlaceholder": "Email hoặc Số điện thoại",
+    "passwordPlaceholder": "Mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "continueWith": "Hoặc tiếp tục với",
+    "noAccount": "Chưa có tài khoản?",
+    "signUp": "Đăng ký ngay",
+    "heroTitle": "Elevate your personal style with every detail."
   },
   "theme": {
     "toggleToDark": "Chế độ tối",

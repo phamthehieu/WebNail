@@ -3,7 +3,16 @@
     "title": "My First App"
   },
   "auth": {
-    "title": "Authentication"
+    "title": "Authentication",
+    "login": "Login",
+    "welcomeBack": "Welcome back",
+    "emailPlaceholder": "Email or Phone Number",
+    "passwordPlaceholder": "Password",
+    "forgotPassword": "Forgot password?",
+    "continueWith": "Or continue with",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up now",
+    "heroTitle": "Elevate your personal style with every detail."
   },
   "theme": {
     "toggleToDark": "Dark mode",

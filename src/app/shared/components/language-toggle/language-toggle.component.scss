@@ -1,23 +1,26 @@
 .lang-switch {
   display: flex;
+  flex-direction: column;
   align-items: center;
   background: var(--card-bg);
-  border: 2px solid var(--primary);
+  border: 1.5px solid var(--primary);
   border-radius: 9999px;
-  padding: 4px;
+  padding: 3px;
   gap: 2px;
 }
 
 .lang-option {
-  padding: 6px 14px;
+  padding: 6px 8px;
   border-radius: 9999px;
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: var(--text-main);
   background: transparent;
   border: none;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  width: 100%;
+  min-width: 36px;
 
   &:hover {
     color: var(--primary);
