@@ -128,6 +128,32 @@
         }
       },
       "cta": "Xem toàn bộ ưu đãi"
+    },
+    "footer": {
+      "tagline": "Nơi tụ hội của sự sáng tạo và yêu thương. Chúng mình không chỉ làm đẹp móng, chúng mình xây dựng một cộng đồng tự do thể hiện bản thân.",
+      "servicesTitle": "Dịch Vụ Nghệ Thuật",
+      "services": {
+        "signature": "Thiết kế Signature",
+        "organicGel": "Sơn Gel hữu cơ",
+        "art3d": "Vẽ nổi 3D sáng tạo",
+        "deepCare": "Chăm sóc chuyên sâu"
+      },
+      "communityTitle": "Cộng Đồng",
+      "community": {
+        "artistJourney": "Hành trình Nghệ sĩ",
+        "customerStories": "Câu chuyện Khách hàng",
+        "blog": "Blog Sáng tạo",
+        "workshop": "Đăng ký Workshop"
+      },
+      "supportTitle": "Hỗ Trợ",
+      "support": {
+        "faq": "Câu hỏi thường gặp",
+        "memberPolicy": "Chính sách Hội viên",
+        "contact": "Liên hệ hợp tác",
+        "feedback": "Phản hồi dịch vụ"
+      },
+      "madeWith": "MADE WITH LOVE BY",
+      "copyright": "© 2025"
     }
   }
 }

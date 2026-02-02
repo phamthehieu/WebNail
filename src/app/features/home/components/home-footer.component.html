@@ -14,8 +14,7 @@
           >
         </div>
         <p class="text-sm leading-relaxed mb-8">
-          Nơi tụ hội của sự sáng tạo và yêu thương. Chúng mình không chỉ làm đẹp móng, chúng mình
-          xây dựng một cộng đồng tự do thể hiện bản thân.
+          {{ 'home.footer.tagline' | translate }}
         </p>
         <div class="flex gap-4">
           <a
@@ -39,36 +38,36 @@
         </div>
       </div>
       <div appScrollReveal="up" [scrollRevealStagger]="80">
-        <h5 class="text-white font-bold text-lg mb-8">Dịch Vụ Nghệ Thuật</h5>
+        <h5 class="text-white font-bold text-lg mb-8">{{ 'home.footer.servicesTitle' | translate }}</h5>
         <ul class="space-y-4 text-sm font-medium">
-          <li><a class="hover:text-primary transition-colors" href="#">Thiết kế Signature</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Sơn Gel hữu cơ</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Vẽ nổi 3D sáng tạo</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Chăm sóc chuyên sâu</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.services.signature' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.services.organicGel' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.services.art3d' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.services.deepCare' | translate }}</a></li>
         </ul>
       </div>
       <div appScrollReveal="up" [scrollRevealStagger]="160">
-        <h5 class="text-white font-bold text-lg mb-8">Cộng Đồng</h5>
+        <h5 class="text-white font-bold text-lg mb-8">{{ 'home.footer.communityTitle' | translate }}</h5>
         <ul class="space-y-4 text-sm font-medium">
-          <li><a class="hover:text-primary transition-colors" href="#">Hành trình Nghệ sĩ</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Câu chuyện Khách hàng</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Blog Sáng tạo</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Đăng ký Workshop</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.community.artistJourney' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.community.customerStories' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.community.blog' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.community.workshop' | translate }}</a></li>
         </ul>
       </div>
       <div appScrollReveal="up" [scrollRevealStagger]="240">
-        <h5 class="text-white font-bold text-lg mb-8">Hỗ Trợ</h5>
+        <h5 class="text-white font-bold text-lg mb-8">{{ 'home.footer.supportTitle' | translate }}</h5>
         <ul class="space-y-4 text-sm font-medium">
-          <li><a class="hover:text-primary transition-colors" href="#">Câu hỏi thường gặp</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Chính sách Hội viên</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Liên hệ hợp tác</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Phản hồi dịch vụ</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.support.faq' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.support.memberPolicy' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.support.contact' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.support.feedback' | translate }}</a></li>
         </ul>
       </div>
     </div>
     <div class="pt-12 border-t border-white/5 text-center" appScrollReveal="fade">
       <p class="text-xs uppercase tracking-[0.3em] font-bold text-slate-500">
-        MADE WITH LOVE BY <span class="text-primary">nailbookingAU</span> © 2025
+        {{ 'home.footer.madeWith' | translate }} <span class="text-primary">nailbookingAU</span> {{ 'home.footer.copyright' | translate }}
       </p>
     </div>
   </div>

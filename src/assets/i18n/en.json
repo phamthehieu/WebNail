@@ -123,6 +123,32 @@
         }
       },
       "cta": "See all offers"
+    },
+    "footer": {
+      "tagline": "A place for creativity and care. We don't just beautify nails — we build a community where everyone can express themselves.",
+      "servicesTitle": "Art Services",
+      "services": {
+        "signature": "Signature design",
+        "organicGel": "Organic gel polish",
+        "art3d": "Creative 3D nail art",
+        "deepCare": "Deep care treatments"
+      },
+      "communityTitle": "Community",
+      "community": {
+        "artistJourney": "Artist journey",
+        "customerStories": "Customer stories",
+        "blog": "Creative blog",
+        "workshop": "Workshop registration"
+      },
+      "supportTitle": "Support",
+      "support": {
+        "faq": "FAQ",
+        "memberPolicy": "Member policy",
+        "contact": "Partnership contact",
+        "feedback": "Service feedback"
+      },
+      "madeWith": "MADE WITH LOVE BY",
+      "copyright": "© 2025"
     }
   }
 }
