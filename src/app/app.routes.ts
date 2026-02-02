@@ -1,18 +1,21 @@
 import { Routes } from '@angular/router';
 
-import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './features/home/pages/home.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { ServicesComponent } from './features/services/pages/services.component';
+import { BranchesComponent } from './features/branches/pages/branches.component';
+import { OffersComponent } from './features/offers/pages/offers.component';
 
 export const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent,
+    path: '',
+    component: MainLayoutComponent,
     children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./features/home/home.module').then((m) => m.HomeModule),
-      },
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
+      { path: 'home', component: HomeComponent },
+      { path: 'services', component: ServicesComponent },
+      { path: 'branches', component: BranchesComponent },
+      { path: 'offers', component: OffersComponent },
     ],
   },
 
@@ -22,6 +25,5 @@ export const routes: Routes = [
       import('./features/auth/auth.module').then((m) => m.AuthModule),
   },
 
-
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '**', redirectTo: 'home' },
 ];
