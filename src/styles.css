@@ -6,12 +6,16 @@
 
 /* Đảm bảo Leaflet map luôn có nền + full size */
 #branches-map,
+#home-locations-map,
 .leaflet-container {
   width: 100%;
   height: 100%;
 }
 .leaflet-container {
   background: #f1f5f9;
+}
+.dark .leaflet-container {
+  background: #0b1220;
 }
 
 :root {
