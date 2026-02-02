@@ -1,7 +1,18 @@
 
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @custom-variant dark (&&:where(.dark, .dark *));
+
+/* Đảm bảo Leaflet map luôn có nền + full size */
+#branches-map,
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+.leaflet-container {
+  background: #f1f5f9;
+}
 
 :root {
   --primary: #ff9aa2;
@@ -76,7 +87,7 @@
   --color-border: #e5e7eb;
   --color-text: #0f172a;
   --color-text-muted: #6b7280;
-  --color-primary: #2563eb;
+  --color-primary: var(--primary);
   --color-primary-soft: #dbeafe;
   --color-shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
@@ -88,8 +99,8 @@
   --color-border: #1f2937;
   --color-text: #e5e7eb;
   --color-text-muted: #9ca3af;
-  --color-primary: #3b82f6;
-  --color-primary-soft: #1d4ed8;
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--joy);
   --color-shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.65);
 }
   

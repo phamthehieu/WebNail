@@ -155,6 +155,17 @@
       "madeWith": "MADE WITH LOVE BY",
       "copyright": "© 2025"
     }
+  },
+  "branches": {
+    "title": "Tìm Salon Gần Bạn",
+    "searchPlaceholder": "Tìm theo tên đường, quận...",
+    "filter": {
+      "all": "Tất cả"
+    },
+    "map": {
+      "caption": "Hiển thị",
+      "viewAll": "Xem tất cả"
+    }
   }
 }
 

@@ -1,2 +1,118 @@
-<app-home-locations></app-home-locations>
+<section
+  class="h-[calc(100vh-6rem)] flex flex-col lg:flex-row bg-background text-textMain overflow-hidden"
+>
+  <!-- Cột danh sách chi nhánh -->
+  <div
+    class="w-full lg:w-[430px] xl:w-[480px] flex flex-col bg-background border-b lg:border-b-0 lg:border-r border-primary/5"
+  >
+    <!-- Bộ lọc & tìm kiếm -->
+    <div class="sticky top-0 z-10 bg-background/95 backdrop-blur-md p-6 border-b border-primary/5">
+      <div appScrollReveal="up">
+        <h1 class="font-artistic text-3xl text-primary mb-6">
+          {{ 'branches.title' | translate : { default: 'Tìm Salon Gần Bạn' } }}
+        </h1>
+
+        <div class="space-y-4">
+          <!-- Ô tìm kiếm -->
+          <div class="relative">
+            <mat-icon
+              class="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 text-[20px]"
+              >search</mat-icon
+            >
+            <input
+              class="w-full bg-cardBg dark:bg-neutral-800 border-none rounded-2xl pl-12 pr-4 py-3.5 shadow-sm focus:ring-2 focus:ring-primary/30 outline-none text-sm transition-all"
+              [placeholder]="'branches.searchPlaceholder' | translate : { default: 'Tìm theo tên đường, quận...' }"
+              type="text"
+            />
+          </div>
+
+          <!-- Thành phố + filter -->
+          <div class="flex gap-2">
+            <div class="relative flex-1">
+              <select
+                class="w-full bg-cardBg dark:bg-neutral-800 border-none rounded-2xl px-4 py-3 shadow-sm focus:ring-2 focus:ring-primary/30 outline-none text-sm appearance-none cursor-pointer"
+              >
+                <option>Hà Nội</option>
+                <option>TP. Hồ Chí Minh</option>
+                <option>Đà Nẵng</option>
+                <option>Cần Thơ</option>
+              </select>
+              <mat-icon
+                class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-textMain/40 text-[20px]"
+                >expand_more</mat-icon
+              >
+            </div>
+
+            <button
+              type="button"
+              class="bg-secondary/20 p-3 rounded-2xl text-textMain hover:bg-secondary transition-all flex items-center justify-center"
+            >
+              <mat-icon>filter_list</mat-icon>
+            </button>
+          </div>
+
+          <!-- Tabs loại chi nhánh -->
+          <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+            <button
+              type="button"
+              class="shrink-0 px-4 py-1.5 rounded-full bg-primary text-white text-xs font-bold shadow-md"
+            >
+              {{ 'branches.filter.all' | translate : { default: 'Tất cả' } }}
+            </button>
+            <button
+              type="button"
+              class="shrink-0 px-4 py-1.5 rounded-full bg-cardBg dark:bg-neutral-800 border border-primary/10 text-xs font-bold hover:border-primary transition-all"
+            >
+              Flagship
+            </button>
+            <button
+              type="button"
+              class="shrink-0 px-4 py-1.5 rounded-full bg-cardBg dark:bg-neutral-800 border border-primary/10 text-xs font-bold hover:border-primary transition-all"
+            >
+              Studio
+            </button>
+            <button
+              type="button"
+              class="shrink-0 px-4 py-1.5 rounded-full bg-cardBg dark:bg-neutral-800 border border-primary/10 text-xs font-bold hover:border-primary transition-all"
+            >
+              Express
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Danh sách card chi nhánh -->
+    <div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
+      <app-branch-card
+        *ngFor="let b of branches"
+        [branch]="b.data"
+        [revealDelay]="b.revealDelay"
+      ></app-branch-card>
+
+      <div class="h-2 w-full"></div>
+    </div>
+  </div>
+
+  <!-- Cột bản đồ -->
+  <div class="hidden lg:block flex-1 relative bg-slate-100 dark:bg-neutral-900 transition-colors duration-500">
+    <div class="absolute inset-0 w-full h-full overflow-hidden">
+      <div id="branches-map" class="w-full h-full"></div>
+
+      <div
+        class="absolute bottom-6 left-6 right-6 max-w-sm ml-auto bg-cardBg/95 backdrop-blur-md p-5 rounded-[2.5rem] border border-primary/10 shadow-2xl flex items-center justify-between"
+      >
+        <div>
+          <div class="flex items-center gap-2 mb-0.5">
+            <span class="text-[10px] font-bold text-primary uppercase tracking-widest">
+              {{ 'branches.map.caption' | translate : { default: 'Hiển thị' } }}
+            </span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          </div>
+          <p class="text-sm font-bold">6 Salon đang hoạt động</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 

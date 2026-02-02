@@ -1,0 +1,81 @@
+<article
+  class="bg-cardBg p-4 rounded-[2rem] shadow-sm border border-transparent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+  appScrollReveal="up"
+  [scrollRevealDelay]="revealDelay"
+>
+  <div class="flex gap-4">
+    <div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
+      <ng-container *ngIf="branch.imageSrc; else fallbackMedia">
+        <img
+          [src]="branch.imageSrc"
+          [alt]="branch.imageAlt ?? branch.title"
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+      </ng-container>
+      <ng-template #fallbackMedia>
+        <div
+          class="w-full h-full flex items-center justify-center"
+          [class]="branch.fallbackBgClass ?? 'bg-primary/10'"
+        >
+          <mat-icon
+            class="text-4xl"
+            [class]="branch.fallbackIconClass ?? 'text-primary/40'"
+          >
+            {{ branch.fallbackIcon ?? 'spa' }}
+          </mat-icon>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="flex-1 min-w-0">
+      <div class="flex justify-between items-start mb-1">
+        <h3 class="text-lg font-bold text-textMain truncate">{{ branch.title }}</h3>
+        <span
+          class="px-2 py-0.5 text-textMain text-[9px] font-bold uppercase rounded-full tracking-wide"
+          [class]="branch.badgeClass"
+        >
+          {{ branch.badgeText }}
+        </span>
+      </div>
+
+      <div class="flex items-center gap-1.5 text-textMain/60 mb-2 text-xs">
+        <mat-icon class="text-sm">location_on</mat-icon>
+        <span class="truncate">{{ branch.address }}</span>
+      </div>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="flex items-center gap-1">
+          <span
+            class="w-2 h-2 rounded-full"
+            [class]="branch.status === 'open' ? 'bg-emerald-500' : 'bg-rose-500'"
+          ></span>
+          <span
+            class="text-[10px] font-bold uppercase"
+            [class]="branch.status === 'open' ? 'text-emerald-500' : 'text-rose-500'"
+          >
+            {{ branch.statusText }}
+          </span>
+        </div>
+        <span class="text-[10px] text-textMain/40">{{ branch.statusMeta }}</span>
+      </div>
+
+      <div class="flex gap-2">
+        <button
+          type="button"
+          class="flex-1 flex items-center justify-center gap-1 border-2 border-primary/20 py-2 rounded-xl font-bold text-[10px] hover:bg-primary/5 transition-colors"
+        >
+          <mat-icon class="text-xs">call</mat-icon>
+          Hotline
+        </button>
+        <button
+          type="button"
+          class="flex-1 flex items-center justify-center gap-1 bg-primary py-2 rounded-xl font-bold text-[10px] text-white hover:bg-joy shadow-lg shadow-primary/10 transition-all"
+        >
+          <mat-icon class="text-xs">event_available</mat-icon>
+          Đặt lịch
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+

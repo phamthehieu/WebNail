@@ -17,6 +17,6 @@ import { HomeOffersComponent } from '../components/home-offers.component';
   ],
 })
 export class HomeComponent {
-  token: string | null = null;
+  // Trang home hiện tại chỉ là composition các section con.
 }
 

@@ -150,6 +150,17 @@
       "madeWith": "MADE WITH LOVE BY",
       "copyright": "© 2025"
     }
+  },
+  "branches": {
+    "title": "Find a salon near you",
+    "searchPlaceholder": "Search by street name, district...",
+    "filter": {
+      "all": "All"
+    },
+    "map": {
+      "caption": "Showing",
+      "viewAll": "View all"
+    }
   }
 }
 
