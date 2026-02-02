@@ -1,14 +1,12 @@
 <section
-  class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-pink-50 via-background to-emerald-50 dark:from-neutral-900 dark:via-background dark:to-neutral-900 transition-colors duration-500"
->
+  class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-pink-50 via-background to-emerald-50 dark:from-neutral-900 dark:via-background dark:to-neutral-900 transition-colors duration-500">
   <div class="absolute top-20 right-10 w-64 h-64 bg-accent/40 bubble-accent blur-3xl"></div>
   <div class="absolute bottom-20 left-10 w-96 h-96 bg-secondary/30 bubble-accent blur-3xl"></div>
   <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
     <div class="text-left" appScrollReveal="up">
       <span
-        class="inline-block px-4 py-1 rounded-full bg-secondary/30 text-secondary dark:text-primary text-sm font-bold mb-6 tracking-wide uppercase italic transition-colors"
-        >{{ 'home.hero.badge' | translate }}</span
-      >
+        class="inline-block px-4 py-1 rounded-full bg-secondary/30 text-secondary dark:text-primary text-sm font-bold mb-6 tracking-wide uppercase italic transition-colors">{{
+        'home.hero.badge' | translate }}</span>
       <h1 class="text-6xl md:text-8xl mb-6 leading-[1.1]">
         <span class="font-artistic text-primary block">{{ 'home.hero.titleLine1' | translate }}</span>
         <span class="font-bold text-textMain">{{ 'home.hero.titleLine2' | translate }}</span>
@@ -18,50 +16,36 @@
       </p>
       <div class="flex flex-col sm:flex-row items-center gap-4">
         <div class="relative w-full sm:w-auto">
-          <mat-icon
-            class="absolute left-4 top-1/2 -translate-y-1/2 text-primary text-[20px]"
-            >rocket_launch</mat-icon
-          >
+          <mat-icon class="absolute left-4 top-1/2 -translate-y-1/2 text-primary text-[20px]">rocket_launch</mat-icon>
           <input
             class="w-full sm:w-80 bg-cardBg border-2 border-primary/20 rounded-full pl-12 pr-6 py-4 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none shadow-sm text-textMain"
-            [placeholder]="'home.hero.phonePlaceholder' | translate"
-            type="text"
-          />
+            [placeholder]="'home.hero.phonePlaceholder' | translate" type="text" />
         </div>
         <button
-          class="w-full sm:w-auto bg-secondary hover:bg-joy text-textMain dark:text-white px-10 py-4 rounded-full font-bold shadow-lg shadow-secondary/30 transition-all hover:-translate-y-1"
-        >
+          class="w-full sm:w-auto bg-secondary hover:bg-joy text-textMain dark:text-white px-10 py-4 rounded-full font-bold shadow-lg shadow-secondary/30 transition-all hover:-translate-y-1">
           {{ 'home.hero.cta' | translate }}
         </button>
       </div>
     </div>
     <div class="relative" appScrollReveal="up" [scrollRevealDelay]="150">
       <div class="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-cardBg rotate-2 group">
-        <img
-          src="assets/images/nail.png"
-          alt="Creative Nail Art"
-          class="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-110"
-        />
+        <img src="assets/images/nail.png" alt="Creative Nail Art"
+          class="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-110" />
         <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-40"></div>
       </div>
-      <div
-        class="absolute -bottom-6 -left-6 bg-cardBg p-6 rounded-3xl shadow-xl -rotate-3 border border-primary/5"
-      >
+      <div class="absolute -bottom-6 -left-6 bg-cardBg p-6 rounded-3xl shadow-xl -rotate-3 border border-primary/5">
         <div class="flex items-center gap-4">
           <div class="flex -space-x-4">
             <div
-              class="w-12 h-12 rounded-full border-2 border-cardBg bg-secondary/40 text-secondary flex items-center justify-center overflow-hidden"
-            >
+              class="w-12 h-12 rounded-full border-2 border-cardBg bg-secondary/40 text-secondary flex items-center justify-center overflow-hidden">
               <mat-icon class="text-[22px]">spa</mat-icon>
             </div>
             <div
-              class="w-12 h-12 rounded-full border-2 border-cardBg bg-primary/15 text-primary flex items-center justify-center overflow-hidden"
-            >
+              class="w-12 h-12 rounded-full border-2 border-cardBg bg-primary/15 text-primary flex items-center justify-center overflow-hidden">
               <mat-icon class="text-[22px]">auto_fix_high</mat-icon>
             </div>
             <div
-              class="w-12 h-12 rounded-full border-2 border-cardBg bg-accent/40 text-accent flex items-center justify-center overflow-hidden"
-            >
+              class="w-12 h-12 rounded-full border-2 border-cardBg bg-accent/40 text-accent flex items-center justify-center overflow-hidden">
               <mat-icon class="text-[22px]">palette</mat-icon>
             </div>
           </div>
@@ -78,4 +62,3 @@
     </div>
   </div>
 </section>
-
