@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import * as L from 'leaflet';
 import { ThemeService } from '../../../core/services/theme.service';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
+import { DropdownSelectComponent } from '../../../shared/components/dropdown-select/dropdown-select.component';
 import {
   BranchCardComponent,
   BranchCardModel,
@@ -18,6 +19,7 @@ import {
     MatIconModule,
     TranslateModule,
     ScrollRevealDirective,
+    DropdownSelectComponent,
     BranchCardComponent,
   ],
   templateUrl: './branches.component.html',
@@ -50,6 +52,9 @@ export class BranchesComponent implements AfterViewInit, OnDestroy {
       subdomains: 'abcd',
     }).addTo(this.map);
   }
+
+  // Giá trị city đang được chọn trong dropdown
+  selectedCity = 'all';
 
   branches: Array<{ revealDelay: number; data: BranchCardModel }> = [
     {

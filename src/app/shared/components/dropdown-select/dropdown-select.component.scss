@@ -1,0 +1,90 @@
+
+.select {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: 300ms;
+  color: var(--text-main);
+  overflow: visible;
+  display: block;
+}
+
+.selected {
+  background-color: var(--card-bg);
+  padding: 0.75rem 2.75rem 0.75rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  z-index: 2;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease,
+    background-color 200ms ease;
+}
+
+.select:hover .selected {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+}
+
+.arrow {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  height: 0.9rem;
+  width: 0.9rem;
+  fill: var(--text-main);
+  z-index: 2;
+  transition: 300ms;
+  pointer-events: none;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 0.4rem;
+  background-color: var(--card-bg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 0.4rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: 300ms;
+  transform: translateY(-4px);
+  z-index: 50;
+}
+
+.options.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.select.open .arrow {
+  transform: rotate(0deg);
+}
+
+.option {
+  border-radius: 5px;
+  padding: 0.5rem 0.65rem;
+  transition: 300ms;
+  background-color: var(--card-bg);
+  width: 100%;
+  font-size: 0.875rem;
+  display: block;
+}
+
+.option:hover {
+  background-color: var(--accent);
+}
+
