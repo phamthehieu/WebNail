@@ -1,2 +1,247 @@
-<app-home-services></app-home-services>
+<section
+  class="min-h-[calc(100vh-6rem)] pt-28 pb-40 md:pb-32 bg-background text-textMain overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Tiêu đề -->
+    <header class="mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">
+        Khám Phá Dịch Vụ Nghệ Thuật
+      </h1>
+      <p class="font-artistic text-primary text-xl">
+        Tự do thể hiện chính mình
+      </p>
+    </header>
 
+    <div class="flex flex-col lg:flex-row gap-10">
+      <!-- Sidebar bộ lọc -->
+      <aside
+        class="w-full lg:w-1/4 space-y-8 bg-cardBg rounded-[2rem] shadow-sm border border-primary/10 p-6"
+      >
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+          <span class="material-icons text-primary text-[20px]">filter_list</span>
+          Bộ lọc
+        </h3>
+
+        <!-- Danh mục -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-bold text-xs uppercase tracking-wider">
+              Danh mục
+            </span>
+          </div>
+          <div class="space-y-3 text-sm">
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                class="rounded text-primary focus:ring-primary/30 border-primary/20 w-4 h-4"
+                checked
+              />
+              <span>Nail Art</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                class="rounded text-primary focus:ring-primary/30 border-primary/20 w-4 h-4"
+              />
+              <span>Spa &amp; Massage</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                class="rounded text-primary focus:ring-primary/30 border-primary/20 w-4 h-4"
+              />
+              <span>Combo Đặc Biệt</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Giá -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-bold text-xs uppercase tracking-wider">
+              Giá cả
+            </span>
+          </div>
+          <div class="px-1">
+            <input
+              type="range"
+              min="0"
+              max="1000000"
+              step="50000"
+              class="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer hover:bg-primary/30"
+            />
+            <div class="flex justify-between mt-2 text-[11px] font-bold text-textMain/60">
+              <span>0đ</span>
+              <span>1.000.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Xếp hạng -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-bold text-xs uppercase tracking-wider">
+              Xếp hạng
+            </span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input
+                type="radio"
+                name="rating"
+                class="text-primary focus:ring-primary/30 border-primary/20 w-4 h-4"
+              />
+              <div class="flex items-center text-yellow-400 text-[16px]">
+                <span class="material-icons text-[18px]">star</span>
+                <span class="material-icons text-[18px]">star</span>
+                <span class="material-icons text-[18px]">star</span>
+                <span class="material-icons text-[18px]">star</span>
+                <span class="material-icons text-[18px]">star</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input
+                type="radio"
+                name="rating"
+                class="text-primary focus:ring-primary/30 border-primary/20 w-4 h-4"
+              />
+              <div class="flex items-center text-yellow-400 text-[16px]">
+                <span class="material-icons text-[18px]">star</span>
+                <span class="material-icons text-[18px]">star</span>
+                <span class="material-icons text-[18px]">star</span>
+                <span class="material-icons text-[18px]">star</span>
+                <span class="material-icons text-[18px] text-textMain/30"
+                  >star</span
+                >
+                <span class="ml-1 text-textMain/60 text-[11px] mt-0.5">
+                  &amp; trở lên
+                </span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <section class="w-full lg:w-3/4">
+        <div
+          class="flex flex-col sm:flex-row justify-between items-center bg-cardBg p-4 rounded-3xl border border-primary/5 mb-8 gap-4"
+        >
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-textMain/60">
+              Sắp xếp theo:
+            </span>
+            <div class="min-w-[150px]">
+              <app-dropdown-select
+                [(value)]="sortValue"
+                [options]="sortOptions"
+                placeholder="Mới nhất"
+              ></app-dropdown-select>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 bg-primary/5 p-1 rounded-xl">
+            <button
+              type="button"
+              (click)="viewMode = 'grid'"
+              [ngClass]="
+                viewMode === 'grid'
+                  ? 'p-2 rounded-lg bg-white shadow-sm text-primary'
+                  : 'p-2 rounded-lg text-textMain/40 hover:text-primary'
+              "
+            >
+              <span class="material-icons text-[18px]">grid_view</span>
+            </button>
+            <button
+              type="button"
+              (click)="viewMode = 'list'"
+              [ngClass]="
+                viewMode === 'list'
+                  ? 'p-2 rounded-lg bg-white shadow-sm text-primary'
+                  : 'p-2 rounded-lg text-textMain/40 hover:text-primary'
+              "
+            >
+              <span class="material-icons text-[18px]">view_list</span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          [ngClass]="
+            viewMode === 'grid'
+              ? 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'
+              : 'flex flex-col gap-4'
+          "
+        >
+          <app-service-card
+            *ngFor="let s of services"
+            [service]="s"
+            [viewMode]="viewMode"
+          ></app-service-card>
+        </div>
+
+        <div class="mt-10 flex justify-center gap-2">
+          <button
+            type="button"
+            class="w-9 h-9 rounded-full flex items-center justify-center bg-primary text-white text-sm font-bold"
+          >
+            1
+          </button>
+          <button
+            type="button"
+            class="w-9 h-9 rounded-full flex items-center justify-center bg-white border border-primary/10 hover:border-primary text-sm font-bold"
+          >
+            2
+          </button>
+          <button
+            type="button"
+            class="w-9 h-9 rounded-full flex items-center justify-center bg-white border border-primary/10 hover:border-primary"
+          >
+            <span class="material-icons text-[18px]">chevron_right</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<div
+  class="summary-pulse fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-4xl px-6 z-[100]"
+>
+  <div
+    class="glass-bar rounded-[2rem] p-4 flex flex-col md:flex-row items-center justify-center gap-6 shadow-2xl border border-white/20"
+  >
+    <div class="flex items-center gap-16">
+      <div class="flex items-center gap-10">
+        <span
+          class="w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center font-bold"
+          >2</span
+        >
+        <div>
+          <p
+            class="text-xs text-textMain/50 font-bold uppercase tracking-widest"
+          >
+            Đã chọn 2 dịch vụ
+          </p>
+          <p class="text-lg font-bold text-textMain">
+            Tổng cộng: 320.000 VND
+          </p>
+        </div>
+      </div>
+      <div class="h-10 w-px bg-textMain/10 hidden md:block"></div>
+      <div class="hidden md:block">
+        <p
+          class="text-[10px] text-textMain/40 uppercase font-bold tracking-widest"
+        >
+          Thời gian dự kiến
+        </p>
+        <p class="text-sm font-medium">90 Phút</p>
+      </div>
+    </div>
+    <button
+      class="bg-primary hover:bg-joy text-white px-10 py-4 rounded-full font-bold shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-3"
+      type="button"
+    >
+      Xác Nhận Đặt Lịch
+      <span class="material-icons">arrow_forward</span>
+    </button>
+  </div>
+</div>

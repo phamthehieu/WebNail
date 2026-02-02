@@ -29,7 +29,6 @@ export class SiteNavComponent {
 
   onLogin() {
     if (this.token) {
-      // TODO: điều hướng sang trang tài khoản khi có token
       return;
     }
     this.router.navigate(['/auth/login']);
