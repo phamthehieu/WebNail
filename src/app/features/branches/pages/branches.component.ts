@@ -115,20 +115,16 @@ export class BranchesComponent implements AfterViewInit, OnDestroy {
   ];
 
   ngAfterViewInit(): void {
-    // Khởi tạo map (focus Việt Nam)
     this.map = L.map('branches-map', {
       zoomControl: true,
       attributionControl: false,
     }).setView([16.0, 106.0], 5);
 
-    // Tile "minh hoạ" nhẹ (không cần API key). Stamen Watercolor hiện thường yêu cầu key,
-    // nên dùng CARTO Voyager để đảm bảo luôn tải được.
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
       subdomains: 'abcd',
     }).addTo(this.map);
 
-    // Markers demo (tọa độ gần đúng)
     const points: Array<{ name: string; coords: [number, number] }> = [
       { name: 'Hà Nội Flagship', coords: [21.0285, 105.8542] },
       { name: 'Sài Gòn Studio', coords: [10.7626, 106.6602] },
@@ -152,7 +148,6 @@ export class BranchesComponent implements AfterViewInit, OnDestroy {
     const group = L.featureGroup(markers);
     this.map.fitBounds(group.getBounds().pad(0.2));
 
-    // Tránh lỗi render khi map nằm trong container flex/hidden
     setTimeout(() => this.map?.invalidateSize(), 0);
   }
 

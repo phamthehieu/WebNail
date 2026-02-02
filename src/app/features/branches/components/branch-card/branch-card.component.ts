@@ -17,7 +17,6 @@ export interface BranchCardModel {
   statusText: string;
   statusMeta: string;
 
-  /** Ảnh đại diện (nếu có). Nếu không có sẽ dùng icon + nền. */
   imageSrc?: string;
   imageAlt?: string;
   fallbackIcon?: string;
