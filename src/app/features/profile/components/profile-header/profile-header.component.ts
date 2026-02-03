@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
+import { AuthService } from '../../../../core/services/auth.service';
 
 export interface UserProfile {
   name: string;
@@ -34,8 +35,10 @@ export class ProfileHeaderComponent {
   @Output() logout = new EventEmitter<void>();
   @Output() editAvatar = new EventEmitter<void>();
 
+  constructor(private authService: AuthService) {}
+
   onLogout(): void {
-    this.logout.emit();
+    this.authService.logout();
   }
 
   onEditAvatar(): void {

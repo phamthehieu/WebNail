@@ -1,12 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from './features/home/pages/home.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
-import { ServicesComponent } from './features/services/pages/services.component';
-import { BranchesComponent } from './features/branches/pages/branches.component';
-import { OffersComponent } from './features/offers/pages/offers.component';
-import { BookingComponent } from './features/booking/pages/booking.component';
-import { ProfileComponent } from './features/profile/pages/profile.component';
 
 export const routes: Routes = [
   {
@@ -14,12 +8,52 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: 'home', component: HomeComponent },
-      { path: 'services', component: ServicesComponent },
-      { path: 'branches', component: BranchesComponent },
-      { path: 'offers', component: OffersComponent },
-      { path: 'booking', component: BookingComponent },
-      { path: 'profile', component: ProfileComponent },
+      {
+        path: 'home',
+        loadComponent: () =>
+          import('./features/home/pages/home.component').then((m) => m.HomeComponent),
+        data: { animation: 'home' },
+      },
+      {
+        path: 'services',
+        loadComponent: () =>
+          import('./features/services/pages/services.component').then(
+            (m) => m.ServicesComponent
+          ),
+        data: { animation: 'services' },
+      },
+      {
+        path: 'branches',
+        loadComponent: () =>
+          import('./features/branches/pages/branches.component').then(
+            (m) => m.BranchesComponent
+          ),
+        data: { animation: 'branches' },
+      },
+      {
+        path: 'offers',
+        loadComponent: () =>
+          import('./features/offers/pages/offers.component').then(
+            (m) => m.OffersComponent
+          ),
+        data: { animation: 'offers' },
+      },
+      {
+        path: 'booking',
+        loadComponent: () =>
+          import('./features/booking/pages/booking.component').then(
+            (m) => m.BookingComponent
+          ),
+        data: { animation: 'booking' },
+      },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./features/profile/pages/profile.component').then(
+            (m) => m.ProfileComponent
+          ),
+        data: { animation: 'profile' },
+      },
     ],
   },
 
