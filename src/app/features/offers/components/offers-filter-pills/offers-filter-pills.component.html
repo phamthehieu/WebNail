@@ -1,0 +1,25 @@
+<div class="container mx-auto px-6 relative z-10 mb-16" appScrollReveal="up" [scrollRevealDelay]="100">
+  <div class="flex justify-center">
+    <div
+      class="filter-container p-1.5 inline-flex flex-wrap justify-center gap-2 sm:gap-0 bg-white/50 dark:bg-black/20 backdrop-blur-sm rounded-full shadow-inner border border-white/20"
+    >
+      @for (f of filters; track f.id) {
+        <button
+          type="button"
+          class="filter-btn relative z-10 px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 ripple-btn"
+          [class.bg-primary]="activeId === f.id"
+          [class.text-white]="activeId === f.id"
+          [class.font-bold]="activeId === f.id"
+          [class.shadow-md]="activeId === f.id"
+          [class.bg-transparent]="activeId !== f.id"
+          [class.text-textMain]="activeId !== f.id"
+          [class.hover:text-primary]="activeId !== f.id"
+          (click)="onFilterClick($event, f.id)"
+        >
+          {{ f.labelKey | translate }}
+        </button>
+      }
+    </div>
+  </div>
+</div>
+

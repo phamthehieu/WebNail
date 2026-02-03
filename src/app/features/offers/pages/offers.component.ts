@@ -1,28 +1,26 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-import { NgClass } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
-
-interface Offer {
-  id: string;
-  image: string;
-  discount: string;
-  badgeKey?: string;
-  badgeClass?: string;
-  discountDelay?: string;
-}
+import { OfferCardComponent, OfferCardModel } from '../components/offer-card/offer-card.component';
+import { OffersFilterPillsComponent } from '../components/offers-filter-pills/offers-filter-pills.component';
+import { OffersGiftCardComponent } from '../components/offers-gift-card/offers-gift-card.component';
+import { OffersHeroComponent } from '../components/offers-hero/offers-hero.component';
+import { OffersVipCtaComponent } from '../components/offers-vip-cta/offers-vip-cta.component';
 
 @Component({
   selector: 'app-offers-page',
   standalone: true,
-  imports: [RouterLink, MatIconModule, NgClass, TranslateModule, ScrollRevealDirective],
+  imports: [
+    ScrollRevealDirective,
+    OffersHeroComponent,
+    OffersFilterPillsComponent,
+    OfferCardComponent,
+    OffersGiftCardComponent,
+    OffersVipCtaComponent,
+  ],
   templateUrl: './offers.component.html',
 })
 export class OffersComponent implements OnInit {
   activeFilterId = signal<string>('all');
-  tiltTransform = signal<string>('rotateX(0deg) rotateY(0deg)');
   /** Bật sau khi view init để chạy animation vào trang */
   pageEntered = signal(false);
 
@@ -37,7 +35,7 @@ export class OffersComponent implements OnInit {
     { id: 'event', labelKey: 'offersPage.filters.event' },
   ];
 
-  offers: Offer[] = [
+  offers: OfferCardModel[] = [
     {
       id: '1',
       image:
@@ -82,43 +80,4 @@ export class OffersComponent implements OnInit {
       discountDelay: '-2.5s',
     },
   ];
-
-  onFilterClick(event: MouseEvent, filterId: string): void {
-    this.createRipple(event);
-    this.activeFilterId.set(filterId);
-  }
-
-  createRipple(event: MouseEvent): void {
-    const button = event.currentTarget as HTMLElement;
-    if (!button) return;
-    const circle = document.createElement('span');
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
-    const radius = diameter / 2;
-    const rect = button.getBoundingClientRect();
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${event.clientX - rect.left - radius}px`;
-    circle.style.top = `${event.clientY - rect.top - radius}px`;
-    circle.classList.add('ripple');
-    const existing = button.querySelector('.ripple');
-    if (existing) existing.remove();
-    button.appendChild(circle);
-    setTimeout(() => circle.remove(), 600);
-  }
-
-  onTilt(event: MouseEvent): void {
-    const wrapper = event.currentTarget as HTMLElement;
-    if (!wrapper) return;
-    const cardRect = wrapper.getBoundingClientRect();
-    const centerX = cardRect.left + cardRect.width / 2;
-    const centerY = cardRect.top + cardRect.height / 2;
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    const rotateX = ((mouseY - centerY) / (cardRect.height / 2)) * -10;
-    const rotateY = ((mouseX - centerX) / (cardRect.width / 2)) * 10;
-    this.tiltTransform.set(`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
-  }
-
-  resetTilt(): void {
-    this.tiltTransform.set('rotateX(0deg) rotateY(0deg)');
-  }
 }

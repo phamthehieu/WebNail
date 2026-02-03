@@ -1,0 +1,42 @@
+<div
+  class="group relative bg-cardBg rounded-[2rem] shadow-xl overflow-hidden border border-primary/5 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 flex flex-col h-full"
+>
+  <div class="h-72 overflow-hidden relative">
+    <img
+      [alt]="'offersPage.cards.' + offer.id + '.title' | translate"
+      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      [src]="offer.image"
+    />
+    @if (offer.badgeKey) {
+      <div
+        class="absolute top-4 left-4 text-white px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest shadow-lg"
+        [ngClass]="offer.badgeClass"
+      >
+        {{ 'offersPage.badges.' + offer.badgeKey | translate }}
+      </div>
+    }
+    <div
+      class="absolute -bottom-6 -right-4 w-24 h-24 bg-[#D4AF37] text-white flex items-center justify-center font-bold text-2xl shadow-xl z-10 border-4 border-cardBg rounded-full group-hover:scale-110 transition-transform floating-element"
+      [style.animation-delay]="offer.discountDelay"
+    >
+      {{ offer.discount }}
+    </div>
+  </div>
+  <div class="p-8 pt-10 flex flex-col flex-grow">
+    <h3 class="font-artistic text-2xl mb-3 text-textMain group-hover:text-primary transition-colors">
+      {{ 'offersPage.cards.' + offer.id + '.title' | translate }}
+    </h3>
+    <p class="text-textMain/60 text-sm mb-6 leading-relaxed flex-grow">
+      {{ 'offersPage.cards.' + offer.id + '.description' | translate }}
+    </p>
+    <button
+      type="button"
+      class="w-full py-3.5 rounded-xl bg-secondary text-slate-800 font-bold hover:brightness-95 hover:shadow-lg transition-all duration-300 uppercase tracking-wide text-sm card-btn-glow ripple-btn"
+      (click)="onCtaClick($event)"
+      [routerLink]="['/booking']"
+    >
+      {{ 'offersPage.getOffer' | translate }}
+    </button>
+  </div>
+</div>
+
