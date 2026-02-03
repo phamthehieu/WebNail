@@ -26,7 +26,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          # Angular 21 yêu cầu Node >= 20.19
+          node-version: 20.19.0
           cache: npm
 
       - name: Install dependencies
