@@ -23,6 +23,8 @@ export class ServiceCardComponent {
   @Input({ required: true }) service!: ServiceCardModel;
   @Input() viewMode: 'grid' | 'list' = 'grid';
   @Input() revealDelay = 0;
+  /** Ẩn nút "Thêm vào giỏ" (dùng trong booking khi chọn dịch vụ) */
+  @Input() showAddButton = true;
 }
 
 

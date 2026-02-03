@@ -420,6 +420,28 @@
     box-shadow: 0 0 15px var(--secondary);
   }
 
+  /* Booking: thẻ dịch vụ khi chọn (radio) */
+  .service-radio:checked + label .service-card {
+    border-color: var(--secondary) !important;
+    box-shadow:
+      0 0 0 4px rgba(20, 189, 127, 0.2),
+      0 0 15px rgba(20, 189, 127, 0.4);
+    transform: scale(1.02);
+  }
+
+  /* Thanh cuộn tùy chỉnh (booking, branches...) */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+  }
+
   @keyframes shimmer {
     0% {
       background-position: -200% 0;
@@ -464,6 +486,48 @@
 
   .dark .glass-bar {
     background: rgba(26, 26, 26, 0.8);
+  }
+
+  /* Booking page: focus grow, input success, shimmer button */
+  .focus-grow {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .focus-grow:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 154, 162, 0.3);
+    border-color: var(--primary) !important;
+  }
+
+  .input-success:valid {
+    border-color: var(--secondary) !important;
+  }
+
+  .success-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shimmer-btn {
+    background: linear-gradient(
+      90deg,
+      var(--secondary) 0%,
+      #d4f5e9 25%,
+      var(--secondary) 50%,
+      #d4f5e9 75%,
+      var(--secondary) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+  }
+
+  /* Booking select: custom appearance */
+  .booking-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25rem;
+    padding-right: 2.5rem;
   }
 
   

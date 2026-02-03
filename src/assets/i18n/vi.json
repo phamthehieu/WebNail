@@ -156,6 +156,68 @@
       "copyright": "© 2025"
     }
   },
+  "booking": {
+    "titleLine1": "ĐẶT HẸN NGAY,",
+    "titleLine2": "Tận hưởng ưu đãi",
+    "description": "Khám phá không gian nghệ thuật và lựa chọn thời gian hoàn hảo dành riêng cho bạn.",
+    "labels": {
+      "branch": "Chọn Chi Nhánh",
+      "fullName": "Họ và tên",
+      "phone": "Số điện thoại",
+      "service": "Chọn Dịch Vụ",
+      "date": "Chọn Ngày",
+      "time": "Chọn Giờ",
+      "staff": "Chọn Nhân Viên",
+      "note": "Ghi Chú"
+    },
+    "placeholders": {
+      "branch": "Chọn cơ sở...",
+      "service": "Chọn dịch vụ...",
+      "fullName": "Nhập họ và tên",
+      "phone": "Nhập số điện thoại",
+      "note": "Lời nhắn cho chi nhánh..."
+    },
+    "branches": {
+      "hn": "Hà Nội Flagship - Hoàn Kiếm",
+      "sg": "Sài Gòn Studio - Quận 5"
+    },
+    "services": {
+      "signature": "Thiết kế Signature",
+      "gel": "Sơn Gel hữu cơ",
+      "art3d": "Vẽ nổi 3D sáng tạo",
+      "care": "Chăm sóc chuyên sâu"
+    },
+    "badges": {
+      "bestSeller": "Best Seller",
+      "new": "New",
+      "hot": "Hot"
+    },
+    "serviceCards": {
+      "silk": {
+        "title": "Làm móng tay lụa",
+        "desc": "Quy trình chăm sóc chuyên sâu kết hợp dưỡng chất thiên nhiên giúp đôi tay mềm mịn."
+      },
+      "gel": {
+        "title": "Sơn Gel Cao Cấp",
+        "desc": "Sử dụng dòng sơn organic nhập khẩu, bền màu lên đến 4 tuần, không hại móng."
+      },
+      "art3d": {
+        "title": "Vẽ Nghệ Thuật 3D",
+        "desc": "Thiết kế riêng theo yêu cầu, đính đá Swarovski và charm cao cấp độc quyền."
+      },
+      "care": {
+        "title": "Spa Chân Hồng Hoa",
+        "desc": "Ngâm chân thảo dược, tẩy tế bào chết và massage thư giãn 30 phút."
+      }
+    },
+    "staff": {
+      "random": "Ngẫu nhiên"
+    },
+    "submitBtn": "Đặt Hẹn Ngay",
+    "footerNote": "Xác nhận đặt lịch không tốn phí",
+    "removeService": "Xóa",
+    "addService": "Thêm dịch vụ"
+  },
   "branches": {
     "title": "Tìm Salon Gần Bạn",
     "searchPlaceholder": "Tìm theo tên đường, quận...",

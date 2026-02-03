@@ -1,0 +1,266 @@
+<section
+  class="relative min-h-[calc(100vh-6rem)] flex flex-col items-center pt-32 pb-24 overflow-hidden bg-gradient-to-br from-pink-50 dark:from-neutral-900 via-background to-emerald-50 dark:via-background dark:to-neutral-900 transition-colors duration-500"
+>
+  <div
+    class="absolute top-20 right-10 w-64 h-64 bg-accent/30 bubble-accent blur-3xl"
+  ></div>
+  <div
+    class="absolute bottom-20 left-10 w-96 h-96 bg-secondary/20 bubble-accent blur-3xl"
+  ></div>
+
+  <div
+    class="container mx-auto px-6 relative z-10 text-center mb-12"
+    appScrollReveal="up"
+  >
+    <h1 class="text-4xl md:text-6xl mb-4 leading-tight">
+      <span
+        class="font-artistic text-primary block text-3xl md:text-5xl mb-2"
+      >
+        {{ 'booking.titleLine1' | translate }}
+      </span>
+      <span class="font-bold text-textMain uppercase tracking-tight">
+        {{ 'booking.titleLine2' | translate }}
+      </span>
+    </h1>
+    <p class="text-textMain/60 max-w-2xl mx-auto text-lg">
+      {{ 'booking.description' | translate }}
+    </p>
+  </div>
+
+  <div
+    class="container mx-auto px-6 relative z-10 max-w-4xl w-full"
+    appScrollReveal="up"
+    [scrollRevealDelay]="200"
+  >
+    <div
+      class="bg-cardBg rounded-[2.5rem] shadow-2xl border border-primary/5 p-8 md:p-12"
+    >
+      <form class="space-y-8" (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Chi nhánh -->
+          <div class="space-y-2 relative md:col-span-2">
+            <label
+              class="text-sm font-bold text-textMain/60 uppercase tracking-widest flex items-center gap-2"
+            >
+              <span class="material-icons text-primary text-xl"
+                >location_on</span
+              >
+              {{ 'booking.labels.branch' | translate }}
+            </label>
+            <div class="relative group">
+              <app-dropdown-select
+                [placeholder]="'booking.placeholders.branch' | translate"
+                [options]="branchOptions"
+                [value]="branchId"
+                (valueChange)="branchId = $event"
+              ></app-dropdown-select>
+              <div
+                class="success-check absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 bg-secondary rounded-full items-center justify-center pointer-events-none scale-110 flex"
+                *ngIf="branchId"
+              >
+                <span class="material-icons text-white text-sm font-bold"
+                  >check</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Họ và tên -->
+          <div class="space-y-2 relative">
+            <label
+              class="text-sm font-bold text-textMain/60 uppercase tracking-widest flex items-center gap-2"
+            >
+              <span class="material-icons text-primary text-xl">person</span>
+              {{ 'booking.labels.fullName' | translate }}
+            </label>
+            <app-input-field
+              name="fullName"
+              type="text"
+              leftIcon="person"
+              [placeholder]="'booking.placeholders.fullName' | translate"
+              [(ngModel)]="fullName"
+              autocomplete="name"
+            ></app-input-field>
+          </div>
+
+          <!-- Số điện thoại -->
+          <div class="space-y-2 relative">
+            <label
+              class="text-sm font-bold text-textMain/60 uppercase tracking-widest flex items-center gap-2"
+            >
+              <span class="material-icons text-primary text-xl">phone</span>
+              {{ 'booking.labels.phone' | translate }}
+            </label>
+            <app-input-field
+              name="phone"
+              type="tel"
+              leftIcon="phone"
+              [placeholder]="'booking.placeholders.phone' | translate"
+              [(ngModel)]="phone"
+              autocomplete="tel"
+            ></app-input-field>
+          </div>
+
+          <!-- Ngày -->
+          <div class="space-y-2 relative">
+            <label
+              class="text-sm font-bold text-textMain/60 uppercase tracking-widest flex items-center gap-2"
+            >
+              <span class="material-icons text-primary text-xl"
+                >calendar_today</span
+              >
+              {{ 'booking.labels.date' | translate }}
+            </label>
+            <div class="relative group">
+              <input
+                name="date"
+                type="date"
+                class="w-full bg-background border-2 border-transparent rounded-2xl py-4 px-6 focus:ring-0 focus:outline-none focus-grow text-textMain font-medium shadow-sm input-success"
+                required
+                [(ngModel)]="bookingDate"
+                #dateRef="ngModel"
+              />
+              <div
+                class="success-check absolute right-12 top-1/2 -translate-y-1/2 w-6 h-6 bg-secondary rounded-full items-center justify-center pointer-events-none scale-110 flex"
+                *ngIf="dateRef.valid && dateRef.value"
+              >
+                <span class="material-icons text-white text-sm font-bold"
+                  >check</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Giờ -->
+          <div class="space-y-2 relative">
+            <label
+              class="text-sm font-bold text-textMain/60 uppercase tracking-widest flex items-center gap-2"
+            >
+              <span class="material-icons text-primary text-xl">schedule</span>
+              {{ 'booking.labels.time' | translate }}
+            </label>
+            <div class="relative group">
+              <input
+                name="time"
+                type="time"
+                class="w-full bg-background border-2 border-transparent rounded-2xl py-4 px-6 focus:ring-0 focus:outline-none focus-grow text-textMain font-medium shadow-sm input-success"
+                required
+                [(ngModel)]="bookingTime"
+                #timeRef="ngModel"
+              />
+              <div
+                class="success-check absolute right-12 top-1/2 -translate-y-1/2 w-6 h-6 bg-secondary rounded-full items-center justify-center pointer-events-none scale-110 flex"
+                *ngIf="timeRef.valid && timeRef.value"
+              >
+                <span class="material-icons text-white text-sm font-bold"
+                  >check</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chọn Dịch Vụ (dạng list như trang services) -->
+        <div class="space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <label
+              class="text-sm font-bold text-textMain/60 uppercase tracking-widest flex items-center gap-2"
+            >
+              <span class="material-icons text-primary text-xl">palette</span>
+              {{ 'booking.labels.service' | translate }}
+            </label>
+            <a
+              [routerLink]="['/services']"
+              class="inline-flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2.5 rounded-full text-sm font-bold transition-colors"
+            >
+              <span class="material-icons text-[20px]">add_circle</span>
+              {{ 'booking.addService' | translate }}
+            </a>
+          </div>
+          <div class="flex flex-col gap-4">
+            @for (item of visibleServiceList; track item.id) {
+              <div class="relative group/item">
+                <input
+                  type="radio"
+                  class="hidden service-radio"
+                  [id]="'service-' + item.id"
+                  name="service_choice"
+                  [value]="item.id"
+                  [(ngModel)]="serviceId"
+                />
+                <label
+                  [for]="'service-' + item.id"
+                  class="block cursor-pointer"
+                >
+                  <app-service-card
+                    [service]="item.service"
+                    viewMode="list"
+                    [showAddButton]="false"
+                  />
+                </label>
+                <button
+                  type="button"
+                  (click)="removeService(item.id); $event.preventDefault(); $event.stopPropagation()"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-red-500/90 hover:bg-red-500 text-white flex items-center justify-center shadow-lg transition-opacity"
+                  [ngClass]="{
+                    'opacity-100': serviceId === item.id,
+                    'opacity-0 group-hover/item:opacity-100': serviceId !== item.id
+                  }"
+                  [attr.aria-label]="'booking.removeService' | translate"
+                  [title]="'booking.removeService' | translate"
+                >
+                  <span class="material-icons text-[22px]">close</span>
+                </button>
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- Nhân viên -->
+        <div class="space-y-6 overflow-visible pt-4 pb-10">
+          <label
+            class="text-sm font-bold text-textMain/60 uppercase tracking-widest flex items-center gap-2"
+          >
+            <span class="material-icons text-primary text-xl">face</span>
+            {{ 'booking.labels.staff' | translate }}
+          </label>
+          <app-staff-picker
+            class="block overflow-visible"
+            [staffList]="staffList"
+            [(selectedStaffId)]="selectedStaffId"
+          ></app-staff-picker>
+        </div>
+
+        <div class="space-y-2">
+          <label
+            class="text-sm font-bold text-textMain/60 uppercase tracking-widest flex items-center gap-2"
+          >
+            <span class="material-icons text-primary text-xl">edit_note</span>
+            {{ 'booking.labels.note' | translate }}
+          </label>
+          <textarea
+            name="note"
+            class="w-full bg-background border-2 border-transparent rounded-2xl py-4 px-6 focus:ring-0 focus:outline-none focus-grow text-textMain font-medium shadow-sm h-32 resize-none"
+            [placeholder]="'booking.placeholders.note' | translate"
+            [(ngModel)]="note"
+          ></textarea>
+        </div>
+
+        <div class="pt-6">
+          <button
+            type="submit"
+            class="bg-primary hover:bg-joy text-white w-full px-10 py-5 rounded-full font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 text-xl uppercase tracking-wider"
+          >
+            <span class="material-icons">check_circle</span>
+            {{ 'booking.submitBtn' | translate }}
+          </button>
+          <p
+            class="text-center text-textMain/40 text-xs mt-6 uppercase tracking-widest font-bold"
+          >
+            {{ 'booking.footerNote' | translate }}
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

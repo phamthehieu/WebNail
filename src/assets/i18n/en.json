@@ -151,6 +151,68 @@
       "copyright": "© 2025"
     }
   },
+  "booking": {
+    "titleLine1": "BOOK NOW,",
+    "titleLine2": "Enjoy special offers",
+    "description": "Discover our creative space and pick the perfect time slot just for you.",
+    "labels": {
+      "branch": "Choose Branch",
+      "fullName": "Full name",
+      "phone": "Phone number",
+      "service": "Choose Service",
+      "date": "Choose Date",
+      "time": "Choose Time",
+      "staff": "Choose Staff",
+      "note": "Note"
+    },
+    "placeholders": {
+      "branch": "Select branch...",
+      "service": "Select service...",
+      "fullName": "Enter your full name",
+      "phone": "Enter your phone number",
+      "note": "Message for the branch..."
+    },
+    "branches": {
+      "hn": "Hanoi Flagship - Hoan Kiem",
+      "sg": "Saigon Studio - District 5"
+    },
+    "services": {
+      "signature": "Signature Design",
+      "gel": "Organic Gel Polish",
+      "art3d": "Creative 3D Nail Art",
+      "care": "Deep Care"
+    },
+    "badges": {
+      "bestSeller": "Best Seller",
+      "new": "New",
+      "hot": "Hot"
+    },
+    "serviceCards": {
+      "silk": {
+        "title": "Silk Nail Care",
+        "desc": "Deep care routine with natural ingredients for soft, smooth hands."
+      },
+      "gel": {
+        "title": "Premium Gel Polish",
+        "desc": "Imported organic gel, color lasts up to 4 weeks, nail-friendly."
+      },
+      "art3d": {
+        "title": "3D Nail Art",
+        "desc": "Custom designs, Swarovski stones and exclusive charms."
+      },
+      "care": {
+        "title": "Rose Foot Spa",
+        "desc": "Herbal foot soak, exfoliation and 30-minute relaxing massage."
+      }
+    },
+    "staff": {
+      "random": "Any"
+    },
+    "submitBtn": "Book Now",
+    "footerNote": "Booking confirmation is free",
+    "removeService": "Remove",
+    "addService": "Add service"
+  },
   "branches": {
     "title": "Find a salon near you",
     "searchPlaceholder": "Search by street name, district...",

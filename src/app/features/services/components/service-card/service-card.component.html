@@ -44,15 +44,17 @@
       <span class="text-primary font-bold text-lg">
         {{ service.priceLabel }}
       </span>
-      <button
-        type="button"
-        class="btn-add-cart bg-secondary/80 hover:bg-secondary text-textMain px-5 py-2 rounded-full text-xs font-bold flex items-center gap-2"
-      >
-        <span class="material-icons text-[18px]">
-          add_shopping_cart
-        </span>
-        Thêm vào giỏ
-      </button>
+      @if (showAddButton) {
+        <button
+          type="button"
+          class="btn-add-cart bg-secondary/80 hover:bg-secondary text-textMain px-5 py-2 rounded-full text-xs font-bold flex items-center gap-2"
+        >
+          <span class="material-icons text-[18px]">
+            add_shopping_cart
+          </span>
+          Thêm vào giỏ
+        </button>
+      }
     </div>
   </div>
 </article>
@@ -108,15 +110,17 @@
         <span class="text-primary font-bold text-lg">
           {{ service.priceLabel }}
         </span>
-        <button
-          type="button"
-          class="btn-add-cart bg-secondary/80 hover:bg-secondary text-textMain px-5 py-2 rounded-full text-xs font-bold flex items-center gap-2"
-        >
-          <span class="material-icons text-[18px]">
-            add_shopping_cart
-          </span>
-          Thêm vào giỏ
-        </button>
+        @if (showAddButton) {
+          <button
+            type="button"
+            class="btn-add-cart bg-secondary/80 hover:bg-secondary text-textMain px-5 py-2 rounded-full text-xs font-bold flex items-center gap-2"
+          >
+            <span class="material-icons text-[18px]">
+              add_shopping_cart
+            </span>
+            Thêm vào giỏ
+          </button>
+        }
       </div>
     </div>
   </article>

@@ -1,0 +1,39 @@
+<div class="flex gap-8 overflow-x-auto overflow-y-visible py-6 pb-8 staff-selection px-2">
+  @for (staff of staffList; track staff.id) {
+    <div class="flex-shrink-0">
+      <input
+        type="radio"
+        [id]="'staff-' + staff.id"
+        name="staff"
+        class="hidden staff-radio"
+        [value]="staff.id"
+        [checked]="selectedStaffId === staff.id"
+        (change)="selectStaff(staff.id)"
+      />
+      <label
+        [for]="'staff-' + staff.id"
+        class="flex flex-col items-center gap-3 cursor-pointer staff-card group"
+      >
+        <div class="relative">
+          <div
+            class="burst-effect absolute inset-0 rounded-full border-2 border-teal-400 opacity-0 pointer-events-none"
+          ></div>
+          <div
+            class="staff-img-container w-20 h-20 rounded-full p-1 border-2 border-primary/20 transition-all duration-300 overflow-hidden bg-white shadow-sm ring-4 ring-primary/5"
+          >
+            <img
+              [src]="staff.avatarUrl"
+              [alt]="staff.name"
+              class="w-full h-full object-cover rounded-full"
+            />
+          </div>
+        </div>
+        <span
+          class="text-xs font-bold text-textMain group-hover:text-primary transition-colors"
+        >
+          {{ staff.name }}
+        </span>
+      </label>
+    </div>
+  }
+</div>

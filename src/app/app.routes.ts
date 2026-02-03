@@ -5,6 +5,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { ServicesComponent } from './features/services/pages/services.component';
 import { BranchesComponent } from './features/branches/pages/branches.component';
 import { OffersComponent } from './features/offers/pages/offers.component';
+import { BookingComponent } from './features/booking/pages/booking.component';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,7 @@ export const routes: Routes = [
       { path: 'services', component: ServicesComponent },
       { path: 'branches', component: BranchesComponent },
       { path: 'offers', component: OffersComponent },
+      { path: 'booking', component: BookingComponent },
     ],
   },
 

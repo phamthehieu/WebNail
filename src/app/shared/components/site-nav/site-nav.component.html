@@ -42,12 +42,12 @@
       <mat-icon>person_outline</mat-icon>
     </button>
 
-    <button
-      class="bg-primary hover:bg-joy text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105"
-      type="button"
+    <a
+      [routerLink]="['/booking']"
+      class="bg-primary hover:bg-joy text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 inline-flex items-center justify-center"
     >
       {{ 'home.nav.bookNow' | translate }}
-    </button>
+    </a>
 
     <app-language-toggle></app-language-toggle>
     <app-theme-toggle></app-theme-toggle>
