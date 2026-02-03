@@ -1,13 +1,19 @@
 <div
-  class="bg-background text-textMain font-sans selection:bg-primary/30 scroll-smooth transition-colors duration-500"
+  class="min-h-screen flex flex-col bg-background text-textMain font-sans selection:bg-primary/30 scroll-smooth transition-colors duration-500"
 >
   <app-site-nav></app-site-nav>
 
-  <main class="pt-24">
-    <div class="relative" [@routeAnimations]="prepareRoute(outlet)">
-      <router-outlet #outlet="outlet"></router-outlet>
+  <main class="pt-24 flex-1">
+    <div class="relative" [@routeAnimations]="routeAnimationKey()">
+      <router-outlet
+        #outlet="outlet"
+        (activate)="onOutletActivate(outlet)"
+        (deactivate)="onOutletDeactivate()"
+      ></router-outlet>
     </div>
   </main>
 
-  <app-site-footer></app-site-footer>
+  @if (showFooter()) {
+    <app-site-footer></app-site-footer>
+  }
 </div>

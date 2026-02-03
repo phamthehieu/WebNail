@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
   animate,
@@ -12,6 +12,7 @@ import {
 
 import { SiteNavComponent } from '../../shared/components/site-nav/site-nav.component';
 import { SiteFooterComponent } from '../../shared/components/site-footer/site-footer.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main-layout',
@@ -21,9 +22,9 @@ import { SiteFooterComponent } from '../../shared/components/site-footer/site-fo
   animations: [
     trigger('routeAnimations', [
       transition('* <=> *', [
-        // Giữ container ổn định, animate 2 trang chồng lên nhau
+        // Giữ container ổn định: chỉ để :leave absolute để không "tụt height"
         query(
-          ':enter, :leave',
+          ':leave',
           [
             style({
               position: 'absolute',
@@ -34,6 +35,7 @@ import { SiteFooterComponent } from '../../shared/components/site-footer/site-fo
           ],
           { optional: true }
         ),
+        query(':enter', [style({ position: 'relative', width: '100%' })], { optional: true }),
         query(':enter', [style({ opacity: 0, transform: 'translateY(12px)' })], {
           optional: true,
         }),
@@ -64,9 +66,32 @@ import { SiteFooterComponent } from '../../shared/components/site-footer/site-fo
   ],
 })
 export class MainLayoutComponent {
-  // Trả về key của route để animation chạy khi navigate
+  private readonly router = inject(Router);
+
+  readonly routeAnimationKey = signal<string>('');
+  readonly showFooter = signal<boolean>(false);
+
+  constructor() {
+    // Tránh footer "nhảy" trong lúc route đang dựng / data đang load
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        queueMicrotask(() => this.showFooter.set(true));
+      });
+  }
+
   prepareRoute(outlet: RouterOutlet) {
-    return outlet?.activatedRouteData?.['animation'] ?? outlet?.activatedRoute?.routeConfig?.path ?? '';
+    if (!outlet?.isActivated) return '';
+    return outlet.activatedRouteData?.['animation'] ?? outlet.activatedRoute?.routeConfig?.path ?? '';
+  }
+
+  onOutletActivate(outlet: RouterOutlet): void {
+    // Defer để tránh NG0100 (outlet activate trong cùng change detection pass)
+    queueMicrotask(() => this.routeAnimationKey.set(this.prepareRoute(outlet)));
+  }
+
+  onOutletDeactivate(): void {
+    queueMicrotask(() => this.routeAnimationKey.set(''));
   }
 }
 
