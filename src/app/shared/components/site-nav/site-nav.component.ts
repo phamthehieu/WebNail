@@ -29,9 +29,10 @@ export class SiteNavComponent {
 
   onLogin() {
     if (this.token) {
-      return;
+      this.router.navigate(['/profile']);
+    } else {
+      this.router.navigate(['/auth/login']);
     }
-    this.router.navigate(['/auth/login']);
   }
 }
 

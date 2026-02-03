@@ -1,0 +1,83 @@
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+:host-context(.dark) .glass-card {
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-artistic {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.input-artistic:focus {
+  outline: none;
+  border-bottom-color: var(--primary);
+  box-shadow: 0 4px 6px -4px rgba(255, 154, 162, 0.2);
+}
+
+:host-context(.dark) .input-artistic {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.tab-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px);
+  transition: opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0.4s;
+}
+
+.tab-content.active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 20;
+}
+
+.tab-content.exit-left {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.tab-content.exit-right {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+#tab-indicator {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  height: 3px;
+  background: var(--primary);
+  border-radius: 99px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 2px 4px rgba(255, 154, 162, 0.3);
+}
+
+.history-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}

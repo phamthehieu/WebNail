@@ -6,6 +6,7 @@ import { ServicesComponent } from './features/services/pages/services.component'
 import { BranchesComponent } from './features/branches/pages/branches.component';
 import { OffersComponent } from './features/offers/pages/offers.component';
 import { BookingComponent } from './features/booking/pages/booking.component';
+import { ProfileComponent } from './features/profile/pages/profile.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,7 @@ export const routes: Routes = [
       { path: 'branches', component: BranchesComponent },
       { path: 'offers', component: OffersComponent },
       { path: 'booking', component: BookingComponent },
+      { path: 'profile', component: ProfileComponent },
     ],
   },
 

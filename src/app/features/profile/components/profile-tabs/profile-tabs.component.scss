@@ -1,0 +1,15 @@
+.tab-btn.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+#tab-indicator {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  height: 3px;
+  background: var(--primary);
+  border-radius: 99px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 2px 4px rgba(255, 154, 162, 0.3);
+}

@@ -213,6 +213,65 @@
     "removeService": "Remove",
     "addService": "Add service"
   },
+  "offersPage": {
+    "hero": {
+      "titleLine1": "OFFERS",
+      "titleLine2": "Art",
+      "subtitle": "Wonderful gifts just for you. Enjoy refined care at a sweet price."
+    },
+    "filters": {
+      "all": "All",
+      "member": "Member",
+      "newService": "New service",
+      "event": "Event"
+    },
+    "getOffer": "Get Offer",
+    "birthday": {
+      "title": "Birthday Gift",
+      "description": "Get a free nail art service during your birthday month."
+    },
+    "registerMember": "Register as Member",
+    "vip": {
+      "badge": "NailBooking Club",
+      "title": "Become a",
+      "titleHighlight": "VIP Member",
+      "description": "Earn points with every visit, redeem exciting gifts and enjoy exclusive offers for loyal members.",
+      "joinNow": "Join Now",
+      "learnMore": "Learn More"
+    },
+    "memberCard": {
+      "memberName": "Member Name",
+      "vipAccess": "VIP ACCESS"
+    },
+    "badges": {
+      "bestSeller": "Best Seller",
+      "newArrival": "New Arrival",
+      "limited": "Limited",
+      "hot": "Hot"
+    },
+    "cards": {
+      "1": {
+        "title": "Shine with Friends",
+        "description": "Bring your squad for a group discount. Applies to groups of 3 or more."
+      },
+      "2": {
+        "title": "Autumn Collection: Golden Leaves",
+        "description": "Try our latest gel colours in warm tones and unique hand-painted designs."
+      },
+      "3": {
+        "title": "Premium Spa Package",
+        "description": "Full relaxation with a 7-step hand and foot care ritual and aromatherapy massage."
+      },
+      "4": {
+        "title": "Happy Hour: 1pm - 4pm",
+        "description": "Direct discount on all gel polish services when you book during golden hours on weekdays."
+      },
+      "5": {
+        "title": "Combo: Mum & Little One",
+        "description": "Quality time together. Safe nail polish service designed for little ones."
+      }
+    }
+  },
   "branches": {
     "title": "Find a salon near you",
     "searchPlaceholder": "Search by street name, district...",
@@ -223,6 +282,40 @@
       "caption": "Showing",
       "viewAll": "View all"
     }
+  },
+  "profilePage": {
+    "userProfile": "User Profile",
+    "editAvatar": "Edit avatar",
+    "memberLevel": "Member",
+    "joinedFrom": "Joined from",
+    "bookingCount": "Bookings",
+    "points": "Points",
+    "logout": "Logout",
+    "nextLevel": "Next level",
+    "pointsToNext": "More",
+    "tabs": {
+      "personalInfo": "Personal Information",
+      "bookingHistory": "Booking History"
+    },
+    "editInfo": {
+      "title": "Edit Information",
+      "saveChanges": "Save Changes",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter full name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "birthDate": "Birth Date",
+      "address": "Address",
+      "addressPlaceholder": "Your address",
+      "emailNotifications": "Receive promotional emails"
+    },
+    "stylist": "Stylist",
+    "status": {
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "rebook": "Rebook",
+    "viewMoreHistory": "View More History"
   }
 }
 

@@ -1,0 +1,53 @@
+<section
+  class="relative min-h-screen pt-28 pb-12 overflow-hidden bg-gradient-to-br from-pink-50 via-background to-emerald-50 dark:from-neutral-900 dark:via-background dark:to-neutral-900 transition-colors duration-500"
+>
+  <!-- Decorative bubbles -->
+  <div class="absolute top-40 right-10 w-64 h-64 bg-accent/20 bubble-accent blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 bubble-accent blur-3xl pointer-events-none"></div>
+
+  <!-- Profile Header -->
+  <app-profile-header
+    [user]="user"
+    [pageEntered]="pageEntered"
+    (logout)="onLogout()"
+    (editAvatar)="onEditAvatar()"
+  ></app-profile-header>
+
+  <!-- Tabs -->
+  <app-profile-tabs
+    [activeTab]="activeTab"
+    [pageEntered]="pageEntered"
+    (tabChange)="onTabChange($event)"
+  ></app-profile-tabs>
+
+  <!-- Tab Content -->
+  <div class="container mx-auto px-6 relative z-10 min-h-[500px] overflow-hidden">
+    <!-- Personal Info Tab -->
+    <div class="tab-content" [class.active]="activeTab() === 'personal-info'" id="personal-info">
+      <app-personal-info-form
+        [user]="user"
+        (save)="onSaveChanges($event)"
+      ></app-personal-info-form>
+    </div>
+
+    <!-- Booking History Tab -->
+    <div class="tab-content" [class.active]="activeTab() === 'booking-history'" id="booking-history">
+      <div class="space-y-6 max-w-5xl mx-auto">
+        @for (booking of bookingHistory; track booking.id) {
+          <app-booking-history-item
+            [booking]="booking"
+            (rebook)="onRebook($event)"
+          ></app-booking-history-item>
+        }
+        <div class="text-center mt-12">
+          <button 
+            (click)="onViewMoreHistory()"
+            class="px-8 py-3 rounded-full border border-primary/30 text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            {{ 'profilePage.viewMoreHistory' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<div class="container mx-auto px-6 relative z-10 mb-8 reveal-up" [class.active]="pageEntered()" style="transition-delay: 100ms;">
+  <div class="flex justify-center border-b border-textMain/10 relative w-fit mx-auto">
+    <button
+      class="tab-btn relative px-8 py-4 text-textMain/60 hover:text-textMain transition-colors duration-300 font-medium text-lg z-10"
+      [class.active]="activeTab() === 'personal-info'"
+      [attr.data-tab]="'personal-info'"
+      (click)="switchTab('personal-info')"
+    >
+      {{ 'profilePage.tabs.personalInfo' | translate }}
+    </button>
+    <button
+      class="tab-btn relative px-8 py-4 text-textMain/60 hover:text-textMain transition-colors duration-300 font-medium text-lg z-10"
+      [class.active]="activeTab() === 'booking-history'"
+      [attr.data-tab]="'booking-history'"
+      (click)="switchTab('booking-history')"
+    >
+      {{ 'profilePage.tabs.bookingHistory' | translate }}
+    </button>
+    <div #indicator id="tab-indicator"></div>
+  </div>
+</div>

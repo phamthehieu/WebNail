@@ -1,0 +1,67 @@
+<div class="container mx-auto px-6 relative z-10 mb-8 reveal-up" [class.active]="pageEntered()">
+  <div class="glass-card rounded-[2.5rem] p-8 md:p-12 shadow-xl border-t border-white/60 dark:border-white/10 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none"></div>
+    
+    <div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+      <!-- Avatar -->
+      <div class="relative group">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-primary via-secondary to-accent shadow-lg">
+          <div class="w-full h-full rounded-full overflow-hidden border-4 border-cardBg bg-white">
+            <img [alt]="'profilePage.userProfile' | translate" class="w-full h-full object-cover" [src]="user.avatar" />
+          </div>
+        </div>
+        <button 
+          (click)="onEditAvatar()"
+          class="absolute bottom-1 right-1 bg-white text-primary p-2 rounded-full shadow-md hover:scale-110 transition-transform dark:bg-zinc-800 dark:text-primary"
+          [attr.aria-label]="'profilePage.editAvatar' | translate"
+        >
+          <mat-icon class="text-sm">edit</mat-icon>
+        </button>
+      </div>
+
+      <!-- User Info -->
+      <div class="text-center md:text-left flex-1">
+        <h1 class="text-3xl md:text-4xl font-bold text-textMain mb-2 font-artistic tracking-wide">{{ user.name }}</h1>
+        <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+          <span class="bg-gradient-to-r from-yellow-200 to-amber-200 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1">
+            <mat-icon class="text-sm">diamond</mat-icon>
+            {{ 'profilePage.memberLevel' | translate }} {{ user.memberLevel }}
+          </span>
+          <span class="text-textMain/50 text-sm">{{ 'profilePage.joinedFrom' | translate }}: {{ user.joinDate }}</span>
+        </div>
+        <div class="flex gap-4 justify-center md:justify-start">
+          <div class="text-center px-4 py-2 bg-white/50 dark:bg-white/5 rounded-xl border border-white/20">
+            <span class="block text-xl font-bold text-primary">{{ user.bookingCount }}</span>
+            <span class="text-xs text-textMain/60 font-medium">{{ 'profilePage.bookingCount' | translate }}</span>
+          </div>
+          <div class="text-center px-4 py-2 bg-white/50 dark:bg-white/5 rounded-xl border border-white/20">
+            <span class="block text-xl font-bold text-secondary">{{ user.points }}</span>
+            <span class="text-xs text-textMain/60 font-medium">{{ 'profilePage.points' | translate }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="hidden md:block w-px h-32 bg-gradient-to-b from-transparent via-textMain/10 to-transparent"></div>
+
+      <!-- Actions & Progress -->
+      <div class="w-full md:w-auto flex flex-col items-center md:items-end gap-3">
+        <button
+          (click)="onLogout()"
+          class="mb-2 md:mb-6 group flex items-center gap-2 px-5 py-2.5 rounded-full border border-rose-300/50 bg-white/40 backdrop-blur-md text-rose-500 font-bold text-sm shadow-sm hover:bg-rose-500 hover:text-white hover:border-rose-500 hover:shadow-[0_4px_20px_-4px_rgba(244,63,94,0.5)] transition-all duration-300 dark:bg-black/20 dark:border-rose-400/30 dark:text-rose-400 dark:hover:bg-rose-600 dark:hover:text-white"
+        >
+          <span class="tracking-wide">{{ 'profilePage.logout' | translate }}</span>
+          <mat-icon class="text-[18px] group-hover:translate-x-1 transition-transform">logout</mat-icon>
+        </button>
+        <div class="text-right hidden md:block">
+          <p class="text-sm text-textMain/60 mb-1">{{ 'profilePage.nextLevel' | translate }}</p>
+          <p class="font-bold text-textMain">{{ user.nextLevel }}</p>
+        </div>
+        <app-progress-bar 
+          [progress]="user.progressPercent" 
+          [pointsToNext]="user.pointsToNext"
+        ></app-progress-bar>
+      </div>
+    </div>
+  </div>
+</div>

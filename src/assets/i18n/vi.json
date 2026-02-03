@@ -218,6 +218,65 @@
     "removeService": "Xóa",
     "addService": "Thêm dịch vụ"
   },
+  "offersPage": {
+    "hero": {
+      "titleLine1": "ƯU ĐÃI",
+      "titleLine2": "Nghệ Thuật",
+      "subtitle": "Những món quà tuyệt vời dành riêng cho bạn. Tận hưởng sự chăm sóc tinh tế với mức giá ngọt ngào."
+    },
+    "filters": {
+      "all": "Tất cả",
+      "member": "Thành viên",
+      "newService": "Dịch vụ mới",
+      "event": "Sự kiện"
+    },
+    "getOffer": "Nhận Ngay",
+    "birthday": {
+      "title": "Quà Tặng Sinh Nhật",
+      "description": "Nhận ngay một dịch vụ trang trí móng miễn phí trong tháng sinh nhật của bạn."
+    },
+    "registerMember": "Đăng Ký Thành Viên",
+    "vip": {
+      "badge": "NailBooking Club",
+      "title": "Trở thành",
+      "titleHighlight": "Thành Viên",
+      "description": "Tích điểm mỗi lần sử dụng dịch vụ, đổi quà tặng hấp dẫn và tận hưởng ưu đãi độc quyền chỉ dành riêng cho thành viên thân thiết.",
+      "joinNow": "Tham Gia Ngay",
+      "learnMore": "Tìm Hiểu Thêm"
+    },
+    "memberCard": {
+      "memberName": "Member Name",
+      "vipAccess": "VIP ACCESS"
+    },
+    "badges": {
+      "bestSeller": "Best Seller",
+      "newArrival": "New Arrival",
+      "limited": "Limited",
+      "hot": "Hot"
+    },
+    "cards": {
+      "1": {
+        "title": "Tỏa Sáng Cùng Bạn Bè",
+        "description": "Rủ ngay hội chị em đi làm đẹp để nhận ưu đãi nhóm. Áp dụng cho nhóm từ 3 người trở lên."
+      },
+      "2": {
+        "title": "BST Mùa Thu: Lá Vàng",
+        "description": "Trải nghiệm bộ sưu tập màu sơn gel mới nhất với tông màu ấm áp và họa tiết vẽ tay độc đáo."
+      },
+      "3": {
+        "title": "Gói Spa Cao Cấp",
+        "description": "Thư giãn hoàn toàn với liệu trình chăm sóc tay chân chuyên sâu 7 bước, kết hợp massage tinh dầu."
+      },
+      "4": {
+        "title": "Happy Hour: 13h - 16h",
+        "description": "Giảm giá trực tiếp cho tất cả dịch vụ sơn gel khi đặt lịch vào khung giờ vàng các ngày trong tuần."
+      },
+      "5": {
+        "title": "Combo: Mẹ & Bé",
+        "description": "Khoảnh khắc gắn kết yêu thương. Dịch vụ sơn móng an toàn tuyệt đối cho bé yêu."
+      }
+    }
+  },
   "branches": {
     "title": "Tìm Salon Gần Bạn",
     "searchPlaceholder": "Tìm theo tên đường, quận...",
@@ -228,6 +287,40 @@
       "caption": "Hiển thị",
       "viewAll": "Xem tất cả"
     }
+  },
+  "profilePage": {
+    "userProfile": "Hồ sơ người dùng",
+    "editAvatar": "Chỉnh sửa avatar",
+    "memberLevel": "Thành Viên",
+    "joinedFrom": "Tham gia từ",
+    "bookingCount": "Lần đặt hẹn",
+    "points": "Điểm tích lũy",
+    "logout": "Đăng xuất",
+    "nextLevel": "Cấp độ tiếp theo",
+    "pointsToNext": "Còn",
+    "tabs": {
+      "personalInfo": "Thông tin cá nhân",
+      "bookingHistory": "Lịch sử đặt hẹn"
+    },
+    "editInfo": {
+      "title": "Chỉnh sửa thông tin",
+      "saveChanges": "Lưu thay đổi",
+      "fullName": "Họ và Tên",
+      "fullNamePlaceholder": "Nhập họ tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "birthDate": "Ngày sinh",
+      "address": "Địa chỉ",
+      "addressPlaceholder": "Địa chỉ của bạn",
+      "emailNotifications": "Nhận thông báo ưu đãi qua Email"
+    },
+    "stylist": "Stylist",
+    "status": {
+      "completed": "Hoàn thành",
+      "cancelled": "Đã hủy"
+    },
+    "rebook": "Đặt lại",
+    "viewMoreHistory": "Xem thêm lịch sử"
   }
 }
 
