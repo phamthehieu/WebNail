@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 
 export interface ServiceCardModel {
   title: string;
@@ -15,12 +16,13 @@ export interface ServiceCardModel {
 @Component({
   selector: 'app-service-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollRevealDirective],
   templateUrl: './service-card.component.html',
 })
 export class ServiceCardComponent {
   @Input({ required: true }) service!: ServiceCardModel;
   @Input() viewMode: 'grid' | 'list' = 'grid';
+  @Input() revealDelay = 0;
 }
 
 

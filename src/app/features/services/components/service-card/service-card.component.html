@@ -2,6 +2,8 @@
 <article
   *ngIf="viewMode === 'grid'; else listView"
   class="group service-card rounded-[2rem] overflow-hidden border border-primary/10 flex flex-col bg-cardBg"
+  appScrollReveal="up"
+  [scrollRevealDelay]="revealDelay"
 >
   <div class="relative overflow-hidden h-52 skeleton-shimmer">
     <img
@@ -59,6 +61,8 @@
 <ng-template #listView>
   <article
     class="group service-card rounded-[2rem] overflow-hidden border border-primary/10 bg-cardBg flex flex-col md:flex-row"
+    appScrollReveal="up"
+    [scrollRevealDelay]="revealDelay"
   >
     <!-- Ảnh -->
     <div class="relative w-full md:w-64 h-52 md:h-auto skeleton-shimmer">
