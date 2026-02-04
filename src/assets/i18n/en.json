@@ -316,6 +316,39 @@
     },
     "rebook": "Rebook",
     "viewMoreHistory": "View More History"
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Discover Nail Art Services",
+      "subtitle": "Express yourself freely"
+    },
+    "filter": {
+      "title": "Filters",
+      "category": "Category",
+      "categoryNailArt": "Nail Art",
+      "categorySpaMassage": "Spa & Massage",
+      "categoryCombo": "Special Combo",
+      "price": "Price",
+      "priceMin": "0",
+      "priceMax": "1,000,000",
+      "rating": "Rating",
+      "ratingAndUp": "& up"
+    },
+    "sort": {
+      "label": "Sort by:",
+      "placeholder": "Newest",
+      "newest": "Newest",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "popular": "Most Popular"
+    },
+    "summary": {
+      "selectedCount": "{{count}} services selected",
+      "total": "Total: {{amount}} VND",
+      "estimatedTime": "Estimated time",
+      "minutes": "{{minutes}} Minutes",
+      "confirmBooking": "Confirm Booking"
+    }
   }
 }
 

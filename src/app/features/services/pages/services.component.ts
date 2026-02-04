@@ -1,11 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
   ServiceCardComponent,
   ServiceCardModel,
 } from '../components/service-card/service-card.component';
 import { DropdownSelectComponent } from '../../../shared/components/dropdown-select/dropdown-select.component';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
+import { OffersVipCtaComponent } from '../../offers/components/offers-vip-cta/offers-vip-cta.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AuthService } from '../../../core/services/auth.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-services-page',
@@ -15,19 +19,36 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
     ServiceCardComponent,
     DropdownSelectComponent,
     ScrollRevealDirective,
+    OffersVipCtaComponent,
+    TranslateModule,
+    NgIf,
   ],
   templateUrl: './services.component.html',
 })
 export class ServicesComponent {
-  viewMode: 'grid' | 'list' = 'grid';
+  private readonly translate = inject(TranslateService);
 
+  viewMode: 'grid' | 'list' = 'grid';
   sortValue = 'newest';
-  sortOptions = [
-    { value: 'newest', label: 'Mới nhất' },
-    { value: 'price-asc', label: 'Giá: Thấp đến Cao' },
-    { value: 'price-desc', label: 'Giá: Cao đến Thấp' },
-    { value: 'popular', label: 'Phổ biến nhất' },
-  ];
+
+  summaryCount = 2;
+  summaryTotal = '320.000';
+  summaryMinutes = 90;
+
+  token = signal<string | null>(null);
+
+  constructor(private authService: AuthService) {
+    this.token.set(this.authService.token);
+  }
+
+  get sortOptions() {
+    return [
+      { value: 'newest', label: this.translate.instant('servicesPage.sort.newest') },
+      { value: 'price-asc', label: this.translate.instant('servicesPage.sort.priceAsc') },
+      { value: 'price-desc', label: this.translate.instant('servicesPage.sort.priceDesc') },
+      { value: 'popular', label: this.translate.instant('servicesPage.sort.popular') },
+    ];
+  }
 
   services: Array<{ revealDelay: number; data: ServiceCardModel }> = [
     {

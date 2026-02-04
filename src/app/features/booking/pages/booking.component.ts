@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -18,6 +18,9 @@ import {
   type ServiceCardModel,
 } from '../../services/components/service-card/service-card.component';
 import { InputFieldComponent } from '../../../shared/components/input-field/input-field.component';
+import { OffersVipCtaComponent } from '../../offers/components/offers-vip-cta/offers-vip-cta.component';
+import { AuthService } from '../../../core/services/auth.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-booking-page',
@@ -32,6 +35,8 @@ import { InputFieldComponent } from '../../../shared/components/input-field/inpu
     DropdownSelectComponent,
     ServiceCardComponent,
     InputFieldComponent,
+    OffersVipCtaComponent,
+    NgIf,
   ],
   templateUrl: './booking.component.html',
   styleUrl: './booking.component.scss',
@@ -47,6 +52,8 @@ export class BookingComponent implements OnInit, OnDestroy {
   bookingTime = '';
   selectedStaffId: string | null = 'auto';
   note = '';
+
+  token = signal<string | null>(null);
 
   branchOptions: DropdownOption[] = [];
 
@@ -150,7 +157,9 @@ export class BookingComponent implements OnInit, OnDestroy {
     },
   ];
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService, private authService: AuthService) {
+    this.token.set(this.authService.token);
+  }
 
   ngOnInit(): void {
     this.buildOptions();

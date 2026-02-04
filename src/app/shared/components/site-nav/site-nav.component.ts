@@ -21,17 +21,17 @@ import { AuthService } from '../../../core/services/auth.service';
   templateUrl: './site-nav.component.html',
 })
 export class SiteNavComponent {
-  token: string | null = null;
+  constructor(private authService: AuthService, private router: Router) {}
 
-  constructor(private authService: AuthService, private router: Router) {
-    this.token = this.authService.token ?? null;
+  get token(): string | null {
+    return this.authService.token ?? null;
   }
 
   onLogin() {
-    if (this.token) {
-      this.router.navigate(['/profile']);
-    } else {
+    if (!this.authService.isLoggedIn()) {
       this.router.navigate(['/auth/login']);
+    } else {
+      this.router.navigate(['/profile']);
     }
   }
 }

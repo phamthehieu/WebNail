@@ -1,8 +1,8 @@
 <section
-  class="relative min-h-[calc(100vh-6rem)] flex flex-col items-center pt-32 pb-24 overflow-hidden bg-gradient-to-br from-pink-50 dark:from-neutral-900 via-background to-emerald-50 dark:via-background dark:to-neutral-900 transition-colors duration-500"
+  class="relative min-h-[calc(100vh-6rem)] flex flex-col items-center pt-12 pb-24 overflow-hidden bg-gradient-to-br from-pink-50 dark:from-neutral-900 via-background to-emerald-50 dark:via-background dark:to-neutral-900 transition-colors duration-500"
 >
   <div
-    class="absolute top-20 right-10 w-64 h-64 bg-accent/30 bubble-accent blur-3xl"
+    class="absolute top-10 right-10 w-64 h-64 bg-accent/30 bubble-accent blur-3xl"
   ></div>
   <div
     class="absolute bottom-20 left-10 w-96 h-96 bg-secondary/20 bubble-accent blur-3xl"
@@ -263,4 +263,9 @@
       </form>
     </div>
   </div>
+
+  <div class="-mt-12" *ngIf="token() !== 'token_123'">
+    <app-offers-vip-cta></app-offers-vip-cta>
+  </div>
+
 </section>

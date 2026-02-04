@@ -321,6 +321,39 @@
     },
     "rebook": "Đặt lại",
     "viewMoreHistory": "Xem thêm lịch sử"
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Khám Phá Dịch Vụ Nghệ Thuật",
+      "subtitle": "Tự do thể hiện chính mình"
+    },
+    "filter": {
+      "title": "Bộ lọc",
+      "category": "Danh mục",
+      "categoryNailArt": "Nail Art",
+      "categorySpaMassage": "Spa & Massage",
+      "categoryCombo": "Combo Đặc Biệt",
+      "price": "Giá cả",
+      "priceMin": "0đ",
+      "priceMax": "1.000.000đ",
+      "rating": "Xếp hạng",
+      "ratingAndUp": "& trở lên"
+    },
+    "sort": {
+      "label": "Sắp xếp theo:",
+      "placeholder": "Mới nhất",
+      "newest": "Mới nhất",
+      "priceAsc": "Giá: Thấp đến Cao",
+      "priceDesc": "Giá: Cao đến Thấp",
+      "popular": "Phổ biến nhất"
+    },
+    "summary": {
+      "selectedCount": "Đã chọn {{count}} dịch vụ",
+      "total": "Tổng cộng: {{amount}} VND",
+      "estimatedTime": "Thời gian dự kiến",
+      "minutes": "{{minutes}} Phút",
+      "confirmBooking": "Xác Nhận Đặt Lịch"
+    }
   }
 }
 

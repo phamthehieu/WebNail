@@ -1,14 +1,19 @@
+<div class="-mt-12" *ngIf="token() !== 'token_123'">
+  <app-offers-vip-cta></app-offers-vip-cta>
+</div>
+
 <section
   class="min-h-[calc(100vh-6rem)] pt-28 pb-40 md:pb-32 bg-background text-textMain overflow-hidden"
 >
+
   <div class="max-w-7xl mx-auto px-6">
     <!-- Tiêu đề -->
     <header class="mb-10" appScrollReveal="up">
       <h1 class="text-3xl md:text-4xl font-bold mb-2">
-        Khám Phá Dịch Vụ Nghệ Thuật
+        {{ 'servicesPage.hero.title' | translate }}
       </h1>
       <p class="font-artistic text-primary text-xl">
-        Tự do thể hiện chính mình
+        {{ 'servicesPage.hero.subtitle' | translate }}
       </p>
     </header>
 
@@ -20,14 +25,14 @@
       >
         <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
           <span class="material-icons text-primary text-[20px]">filter_list</span>
-          Bộ lọc
+          {{ 'servicesPage.filter.title' | translate }}
         </h3>
 
         <!-- Danh mục -->
         <div class="mb-6">
           <div class="flex items-center justify-between mb-3">
             <span class="font-bold text-xs uppercase tracking-wider">
-              Danh mục
+              {{ 'servicesPage.filter.category' | translate }}
             </span>
           </div>
           <div class="space-y-3 text-sm">
@@ -37,21 +42,21 @@
                 class="rounded text-primary focus:ring-primary/30 border-primary/20 w-4 h-4"
                 checked
               />
-              <span>Nail Art</span>
+              <span>{{ 'servicesPage.filter.categoryNailArt' | translate }}</span>
             </label>
             <label class="flex items-center gap-3 cursor-pointer">
               <input
                 type="checkbox"
                 class="rounded text-primary focus:ring-primary/30 border-primary/20 w-4 h-4"
               />
-              <span>Spa &amp; Massage</span>
+              <span>{{ 'servicesPage.filter.categorySpaMassage' | translate }}</span>
             </label>
             <label class="flex items-center gap-3 cursor-pointer">
               <input
                 type="checkbox"
                 class="rounded text-primary focus:ring-primary/30 border-primary/20 w-4 h-4"
               />
-              <span>Combo Đặc Biệt</span>
+              <span>{{ 'servicesPage.filter.categoryCombo' | translate }}</span>
             </label>
           </div>
         </div>
@@ -60,7 +65,7 @@
         <div class="mb-6">
           <div class="flex items-center justify-between mb-3">
             <span class="font-bold text-xs uppercase tracking-wider">
-              Giá cả
+              {{ 'servicesPage.filter.price' | translate }}
             </span>
           </div>
           <div class="px-1">
@@ -72,8 +77,8 @@
               class="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer hover:bg-primary/30"
             />
             <div class="flex justify-between mt-2 text-[11px] font-bold text-textMain/60">
-              <span>0đ</span>
-              <span>1.000.000đ</span>
+              <span>{{ 'servicesPage.filter.priceMin' | translate }}</span>
+              <span>{{ 'servicesPage.filter.priceMax' | translate }}</span>
             </div>
           </div>
         </div>
@@ -82,7 +87,7 @@
         <div>
           <div class="flex items-center justify-between mb-3">
             <span class="font-bold text-xs uppercase tracking-wider">
-              Xếp hạng
+              {{ 'servicesPage.filter.rating' | translate }}
             </span>
           </div>
           <div class="space-y-2 text-sm">
@@ -115,7 +120,7 @@
                   >star</span
                 >
                 <span class="ml-1 text-textMain/60 text-[11px] mt-0.5">
-                  &amp; trở lên
+                  {{ 'servicesPage.filter.ratingAndUp' | translate }}
                 </span>
               </div>
             </label>
@@ -130,13 +135,13 @@
         >
           <div class="flex items-center gap-3">
             <span class="text-xs font-bold text-textMain/60">
-              Sắp xếp theo:
+              {{ 'servicesPage.sort.label' | translate }}
             </span>
             <div class="min-w-[150px]">
               <app-dropdown-select
                 [(value)]="sortValue"
                 [options]="sortOptions"
-                placeholder="Mới nhất"
+                [placeholder]="'servicesPage.sort.placeholder' | translate"
               ></app-dropdown-select>
             </div>
           </div>
@@ -224,10 +229,10 @@
           <p
             class="text-xs text-textMain/50 font-bold uppercase tracking-widest"
           >
-            Đã chọn 2 dịch vụ
+            {{ 'servicesPage.summary.selectedCount' | translate:{ count: summaryCount } }}
           </p>
           <p class="text-lg font-bold text-textMain">
-            Tổng cộng: 320.000 VND
+            {{ 'servicesPage.summary.total' | translate:{ amount: summaryTotal } }}
           </p>
         </div>
       </div>
@@ -236,16 +241,16 @@
         <p
           class="text-[10px] text-textMain/40 uppercase font-bold tracking-widest"
         >
-          Thời gian dự kiến
+          {{ 'servicesPage.summary.estimatedTime' | translate }}
         </p>
-        <p class="text-sm font-medium">90 Phút</p>
+        <p class="text-sm font-medium">{{ 'servicesPage.summary.minutes' | translate:{ minutes: summaryMinutes } }}</p>
       </div>
     </div>
     <button
       class="bg-primary hover:bg-joy text-white px-10 py-4 rounded-full font-bold shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-3"
       type="button"
     >
-      Xác Nhận Đặt Lịch
+      {{ 'servicesPage.summary.confirmBooking' | translate }}
       <span class="material-icons">arrow_forward</span>
     </button>
   </div>

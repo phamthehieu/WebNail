@@ -21,12 +21,12 @@
       @for (offer of offers; track offer.id) {
         <app-offer-card [offer]="offer"></app-offer-card>
       }
-
-      <!-- VIP / Gift card -->
       <app-offers-gift-card></app-offers-gift-card>
     </div>
   </div>
 
   <!-- VIP CTA block -->
-  <app-offers-vip-cta></app-offers-vip-cta>
+  <div class="-mt-12" *ngIf="token() !== 'token_123'">
+    <app-offers-vip-cta></app-offers-vip-cta>
+  </div>
 </section>

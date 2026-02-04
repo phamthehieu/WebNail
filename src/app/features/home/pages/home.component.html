@@ -1,4 +1,7 @@
 <div class="home">
+  <div class="-mt-12" *ngIf="token() !== 'token_123'">
+    <app-offers-vip-cta></app-offers-vip-cta>
+  </div>
   <app-home-hero></app-home-hero>
   <app-home-services></app-home-services>
   <app-home-locations></app-home-locations>

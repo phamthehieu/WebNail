@@ -5,7 +5,8 @@ import { OffersFilterPillsComponent } from '../components/offers-filter-pills/of
 import { OffersGiftCardComponent } from '../components/offers-gift-card/offers-gift-card.component';
 import { OffersHeroComponent } from '../components/offers-hero/offers-hero.component';
 import { OffersVipCtaComponent } from '../components/offers-vip-cta/offers-vip-cta.component';
-
+import { NgIf } from '@angular/common';
+import { AuthService } from '../../../core/services/auth.service';
 @Component({
   selector: 'app-offers-page',
   standalone: true,
@@ -16,6 +17,7 @@ import { OffersVipCtaComponent } from '../components/offers-vip-cta/offers-vip-c
     OfferCardComponent,
     OffersGiftCardComponent,
     OffersVipCtaComponent,
+    NgIf,
   ],
   templateUrl: './offers.component.html',
 })
@@ -23,6 +25,12 @@ export class OffersComponent implements OnInit {
   activeFilterId = signal<string>('all');
   /** Bật sau khi view init để chạy animation vào trang */
   pageEntered = signal(false);
+
+  token = signal<string | null>(null);
+
+  constructor(private authService: AuthService) {
+    this.token.set(this.authService.token);
+  }
 
   ngOnInit(): void {
     requestAnimationFrame(() => this.pageEntered.set(true));
