@@ -1,0 +1,68 @@
+@if (hasAny) {
+<div class="contact-fab-wrap" [class.menu-open]="open">
+  <button
+    type="button"
+    class="contact-fab-backdrop"
+    (click)="close()"
+    [attr.aria-hidden]="!open"
+    aria-label="Đóng menu liên hệ"
+  ></button>
+
+  <div class="contact-fab-actions" [class.open]="open">
+    @if (hasWhatsApp) {
+      <a
+        class="contact-fab-mini whatsapp"
+        [href]="getWhatsAppUrl()"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Nhắn tin WhatsApp"
+      >
+        <mat-icon>chat</mat-icon>
+        <span class="label">WhatsApp</span>
+      </a>
+    }
+    @if (hasZalo) {
+      <a
+        class="contact-fab-mini zalo"
+        [href]="zaloLink"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Nhắn tin Zalo"
+      >
+        <mat-icon>forum</mat-icon>
+        <span class="label">Zalo</span>
+      </a>
+    }
+    @if (hasHotline) {
+      <a
+        class="contact-fab-mini hotline"
+        [href]="getTelUrl()"
+        aria-label="Gọi hotline"
+      >
+        <mat-icon>call</mat-icon>
+        <span class="label">Hotline</span>
+      </a>
+    }
+    @if (hasEmail) {
+      <a
+        class="contact-fab-mini email"
+        [href]="getMailUrl()"
+        aria-label="Gửi email"
+      >
+        <mat-icon>email</mat-icon>
+        <span class="label">Email</span>
+      </a>
+    }
+  </div>
+
+  <button
+    type="button"
+    class="contact-fab-main"
+    (click)="toggle()"
+    [attr.aria-expanded]="open"
+    aria-label="Liên hệ với chúng tôi"
+  >
+    <mat-icon>{{ open ? 'close' : 'chat' }}</mat-icon>
+  </button>
+</div>
+}

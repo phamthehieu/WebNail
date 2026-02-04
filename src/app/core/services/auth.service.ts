@@ -1,6 +1,10 @@
 import { Injectable, signal } from "@angular/core";
 import { Router } from "@angular/router";
 
+/**
+ * Lưu ý bảo mật: Token đang lưu localStorage — nếu XSS xảy ra, script có thể đọc token.
+ * Khi có backend thật: nên dùng httpOnly cookie do server set (HttpOnly; Secure; SameSite).
+ */
 @Injectable({
     providedIn: 'root',
 })

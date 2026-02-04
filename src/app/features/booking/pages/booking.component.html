@@ -112,13 +112,13 @@
               {{ 'booking.labels.date' | translate }}
             </label>
             <div class="relative group">
-              <input
+              <app-input-field
                 name="date"
                 type="date"
-                class="w-full bg-background border-2 border-transparent rounded-2xl py-4 px-6 focus:ring-0 focus:outline-none focus-grow text-textMain font-medium shadow-sm input-success"
-                required
                 [(ngModel)]="bookingDate"
                 #dateRef="ngModel"
+                [required]="true"
+                customClasses="shadow-sm input-success"
               />
               <div
                 class="success-check absolute right-12 top-1/2 -translate-y-1/2 w-6 h-6 bg-secondary rounded-full items-center justify-center pointer-events-none scale-110 flex"
@@ -140,13 +140,13 @@
               {{ 'booking.labels.time' | translate }}
             </label>
             <div class="relative group">
-              <input
+              <app-input-field
                 name="time"
                 type="time"
-                class="w-full bg-background border-2 border-transparent rounded-2xl py-4 px-6 focus:ring-0 focus:outline-none focus-grow text-textMain font-medium shadow-sm input-success"
-                required
                 [(ngModel)]="bookingTime"
                 #timeRef="ngModel"
+                [required]="true"
+                customClasses="shadow-sm input-success"
               />
               <div
                 class="success-check absolute right-12 top-1/2 -translate-y-1/2 w-6 h-6 bg-secondary rounded-full items-center justify-center pointer-events-none scale-110 flex"

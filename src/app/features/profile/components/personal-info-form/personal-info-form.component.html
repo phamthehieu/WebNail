@@ -17,36 +17,33 @@
         <label class="block text-xs uppercase tracking-wider text-textMain/50 mb-1 font-bold">
           {{ 'profilePage.editInfo.fullName' | translate }}
         </label>
-        <input
-          class="w-full input-artistic py-3 text-lg text-textMain bg-transparent placeholder-textMain/30"
-          [placeholder]="'profilePage.editInfo.fullNamePlaceholder' | translate"
+        <app-input-field
           type="text"
-          [ngModel]="formData.name"
-          (ngModelChange)="updateField('name', $event)"
+          placeholderKey="profilePage.editInfo.fullNamePlaceholder"
+          [(ngModel)]="formData.name"
+          customClasses="input-artistic py-3 text-lg"
         />
       </div>
       <div class="group">
         <label class="block text-xs uppercase tracking-wider text-textMain/50 mb-1 font-bold">
           {{ 'profilePage.editInfo.email' | translate }}
         </label>
-        <input
-          class="w-full input-artistic py-3 text-lg text-textMain bg-transparent placeholder-textMain/30"
-          placeholder="email@example.com"
+        <app-input-field
           type="email"
-          [ngModel]="formData.email"
-          (ngModelChange)="updateField('email', $event)"
+          placeholder="email@example.com"
+          [(ngModel)]="formData.email"
+          customClasses="input-artistic py-3 text-lg"
         />
       </div>
       <div class="group">
         <label class="block text-xs uppercase tracking-wider text-textMain/50 mb-1 font-bold">
           {{ 'profilePage.editInfo.phone' | translate }}
         </label>
-        <input
-          class="w-full input-artistic py-3 text-lg text-textMain bg-transparent placeholder-textMain/30"
-          placeholder="09xx xxx xxx"
+        <app-input-field
           type="tel"
-          [ngModel]="formData.phone"
-          (ngModelChange)="updateField('phone', $event)"
+          placeholder="09xx xxx xxx"
+          [(ngModel)]="formData.phone"
+          customClasses="input-artistic py-3 text-lg"
         />
       </div>
     </div>
@@ -55,25 +52,21 @@
         <label class="block text-xs uppercase tracking-wider text-textMain/50 mb-1 font-bold">
           {{ 'profilePage.editInfo.birthDate' | translate }}
         </label>
-        <div class="relative">
-          <input
-            class="w-full input-artistic py-3 text-lg text-textMain bg-transparent placeholder-textMain/30"
-            type="date"
-            [ngModel]="formData.birthDate"
-            (ngModelChange)="updateField('birthDate', $event)"
-          />
-        </div>
+        <app-input-field
+          type="date"
+          [(ngModel)]="formData.birthDate"
+          customClasses="input-artistic py-3 text-lg"
+        />
       </div>
       <div class="group">
         <label class="block text-xs uppercase tracking-wider text-textMain/50 mb-1 font-bold">
           {{ 'profilePage.editInfo.address' | translate }}
         </label>
-        <input
-          class="w-full input-artistic py-3 text-lg text-textMain bg-transparent placeholder-textMain/30"
-          [placeholder]="'profilePage.editInfo.addressPlaceholder' | translate"
+        <app-input-field
           type="text"
-          [ngModel]="formData.address"
-          (ngModelChange)="updateField('address', $event)"
+          placeholderKey="profilePage.editInfo.addressPlaceholder"
+          [(ngModel)]="formData.address"
+          customClasses="input-artistic py-3 text-lg"
         />
       </div>
       <div class="pt-4">

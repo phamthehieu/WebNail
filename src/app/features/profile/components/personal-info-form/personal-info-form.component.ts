@@ -4,11 +4,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { UserProfile } from '../profile-header/profile-header.component';
+import { InputFieldComponent } from '../../../../shared/components/input-field/input-field.component';
 
 @Component({
   selector: 'app-personal-info-form',
   standalone: true,
-  imports: [CommonModule, MatIconModule, TranslateModule, FormsModule],
+  imports: [CommonModule, MatIconModule, TranslateModule, FormsModule, InputFieldComponent],
   templateUrl: './personal-info-form.component.html',
   styleUrls: ['./personal-info-form.component.scss'],
 })

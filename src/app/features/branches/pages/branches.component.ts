@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, OnDestroy, effect, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import * as L from 'leaflet';
 import { ThemeService } from '../../../core/services/theme.service';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { DropdownSelectComponent } from '../../../shared/components/dropdown-select/dropdown-select.component';
+import { InputFieldComponent } from '../../../shared/components/input-field/input-field.component';
 import {
   BranchCardComponent,
   BranchCardModel,
@@ -16,10 +18,12 @@ import {
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
     MatIconModule,
     TranslateModule,
     ScrollRevealDirective,
     DropdownSelectComponent,
+    InputFieldComponent,
     BranchCardComponent,
   ],
   templateUrl: './branches.component.html',
@@ -55,6 +59,7 @@ export class BranchesComponent implements AfterViewInit, OnDestroy {
 
   // Giá trị city đang được chọn trong dropdown
   selectedCity = 'all';
+  searchQuery = '';
 
   branches: Array<{ revealDelay: number; data: BranchCardModel }> = [
     {

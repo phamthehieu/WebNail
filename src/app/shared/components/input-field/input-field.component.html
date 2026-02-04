@@ -17,7 +17,9 @@
     [autocomplete]="autocomplete"
     [value]="value"
     [disabled]="disabled"
+    [required]="required"
     (input)="onInput($event)"
+    (paste)="onPaste($event)"
     (blur)="onBlur()"
   />
   

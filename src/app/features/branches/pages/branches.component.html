@@ -14,17 +14,13 @@
 
         <div class="space-y-4">
           <!-- Ô tìm kiếm -->
-          <div class="relative">
-            <mat-icon
-              class="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 text-[20px]"
-              >search</mat-icon
-            >
-            <input
-              class="w-full bg-cardBg dark:bg-neutral-800 border-none rounded-2xl pl-12 pr-4 py-3.5 shadow-sm focus:ring-2 focus:ring-primary/30 outline-none text-sm transition-all"
-              [placeholder]="'branches.searchPlaceholder' | translate : { default: 'Tìm theo tên đường, quận...' }"
-              type="text"
-            />
-          </div>
+          <app-input-field
+            type="text"
+            leftIcon="search"
+            placeholderKey="branches.searchPlaceholder"
+            [(ngModel)]="searchQuery"
+            customClasses="bg-cardBg dark:bg-neutral-800 border-none py-3.5 text-sm"
+          />
 
           <div class="flex gap-2">
             <div class="flex-1">

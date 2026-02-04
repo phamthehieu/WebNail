@@ -15,11 +15,14 @@
         {{ 'home.hero.description' | translate }}
       </p>
       <div class="flex flex-col sm:flex-row items-center gap-4">
-        <div class="relative w-full sm:w-auto">
-          <mat-icon class="absolute left-4 top-1/2 -translate-y-1/2 text-primary text-[20px]">rocket_launch</mat-icon>
-          <input
-            class="w-full sm:w-80 bg-cardBg border-2 border-primary/20 rounded-full pl-12 pr-6 py-4 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none shadow-sm text-textMain"
-            [placeholder]="'home.hero.phonePlaceholder' | translate" type="text" />
+        <div class="w-full sm:w-auto">
+          <app-input-field
+            type="text"
+            leftIcon="rocket_launch"
+            placeholderKey="home.hero.phonePlaceholder"
+            [(ngModel)]="heroPhone"
+            customClasses="sm:w-80 rounded-full border-primary/20"
+          />
         </div>
         <button
           class="w-full sm:w-auto bg-secondary hover:bg-joy text-textMain dark:text-white px-10 py-4 rounded-full font-bold shadow-lg shadow-secondary/30 transition-all hover:-translate-y-1">
