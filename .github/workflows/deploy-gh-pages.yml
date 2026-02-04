@@ -32,14 +32,15 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        # Thay 'web-mail' bằng tên project thật của bạn nếu nó khác
-        run: npx ng build --configuration production --base-href /WebMail/
+        run: npx ng build --configuration production --base-href /WebNail/
+
+      - name: Fix 404 for client-side routing (SPA)
+        run: cp dist/WebNail/browser/index.html dist/WebNail/browser/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # QUAN TRỌNG: Kiểm tra lại đường dẫn này trong thư mục dist của bạn
-          path: dist/web-mail/browser 
+          path: dist/WebNail/browser 
 
   deploy:
     environment:
