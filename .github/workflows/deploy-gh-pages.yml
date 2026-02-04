@@ -34,6 +34,15 @@ jobs:
       - name: Build Angular app
         run: npx ng build --configuration production --base-href /WebNail/
 
+      - name: Fix asset paths for GitHub Pages (absolute URLs)
+        run: |
+          cd dist/WebNail/browser
+          sed -i 's|href="\([a-zA-Z0-9_-]*\.css\)"|href="/WebNail/\1"|g' index.html
+          sed -i 's|href="\(chunk-[a-zA-Z0-9]*\.js\)"|href="/WebNail/\1"|g' index.html
+          sed -i 's|src="\(main-[a-zA-Z0-9]*\.js\)"|src="/WebNail/\1"|g' index.html
+          sed -i 's|href="favicon\.ico"|href="/WebNail/favicon.ico"|g' index.html
+          sed -i 's|<meta http-equiv="Content-Security-Policy"[^>]*>||' index.html
+
       - name: Fix 404 for client-side routing (SPA)
         run: cp dist/WebNail/browser/index.html dist/WebNail/browser/404.html
 
